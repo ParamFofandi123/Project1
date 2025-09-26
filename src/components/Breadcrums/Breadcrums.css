@@ -1,0 +1,33 @@
+.page-Breadcrums {
+  width: 100vw;                          /* full viewport width */
+  margin-left: calc(50% - 50vw);         /* cancel out parent padding */
+  position: relative;
+  text-align: center;
+  color: white;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 120px 20px 40px;              /* top pushes below navbar */
+  box-sizing: border-box;
+}
+
+.page-Breadcrums h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.Breadcrums-nav {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.Breadcrums-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.Breadcrums-nav a:hover {
+  text-decoration: underline;
+}

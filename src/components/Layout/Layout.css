@@ -1,20 +1,38 @@
 /* Navbar */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 70px;          /* fixed height for navbar */
+  background-color: #222;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #222;
-  color: white;
+  padding: 0 20px;
   z-index: 1000;
-
-  box-sizing: border-box;   /* ✅ keeps padding inside width */
-  overflow-x: hidden;       /* ✅ ensures nothing spills horizontally */
+  box-sizing: border-box;
 }
+
+/* Page content (everything below navbar) */
+.content {
+  padding-top: 70px;     /* same as navbar height */
+}
+
+/* Banner */
+.page-banner {
+  margin-top: 70px;      /* ensures banner starts right under navbar */
+  background: url('/path-to-banner.jpg') center/cover no-repeat;
+  height: 250px;         /* adjust size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
 
 .logo {
   margin: 0;
@@ -38,9 +56,10 @@
 
 /* Content section (pushes content below navbar) */
 .content {
-   /* top space for navbar, bottom space for footer */
+   /* padding: 80px 20px 80px; top = navbar height, bottom = footer space */
   min-height: 80vh;
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* Footer */

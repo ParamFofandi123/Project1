@@ -11,7 +11,7 @@
   align-items: center;   /* horizontal center */
   text-align: center;    /* text in center */
   padding: 0;            /* ❌ remove top padding */
-  margin-top: 70px;      /* ✅ offset so it sits just below navbar height */
+  /* margin-top: 70px;      ✅ offset so it sits just below navbar height */
   box-sizing: border-box;
   width: 100%;           /* take full width */
 }

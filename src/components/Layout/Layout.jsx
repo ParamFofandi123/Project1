@@ -1,8 +1,13 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import Breadcrums from "../Breadcrums/Breadcrums"; 
 import "./Layout.css";
 
 export default function Layout() {
+    // const location = useLocation();
+
+  // pages where we don't want the banner
+  // const hideBanner = location.pathname === "/";
   return (
     <div className="layout">
       {/* Navbar */}
@@ -17,6 +22,7 @@ export default function Layout() {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
+            {/* {!hideBanner && <Breadcrums title="Welcome to this Page" />} */}
 
       {/* Page Content */}
       <main className="content">
