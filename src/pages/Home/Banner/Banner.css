@@ -1,0 +1,47 @@
+.banner {
+
+  background: linear-gradient(135deg, #222, #444);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw; /* full viewport width */
+
+}
+
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* space between videos & pamphlet */
+  flex-wrap: wrap; /* responsive for small screens */
+  justify-content: center;
+}
+
+/* Videos side by side */
+.videos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Pamphlet */
+.pamphlet img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .banner-content {
+    flex-direction: column;
+  }
+
+  .videos {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,98 @@
+/* Keep everything horizontally centered */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* horizontal center */
+  text-align: center;    /* text in center */
+  padding: 0;            /* ❌ remove top padding */
+  margin-top: 70px;      /* ✅ offset so it sits just below navbar height */
+  box-sizing: border-box;
+  width: 100%;           /* take full width */
+}
+
+/* Slideshow banner full-width */
+.slideshow {
+  position: relative;
+  /* width: 100vw;                   ✅ full viewport width */
+  margin-left: calc(50% - 50vw);  /* ✅ cancel parent centering */
+  height: 500px;                  /* ✅ taller */
+  overflow: hidden;
+  border-radius: 0;               /* optional: remove curve for full-bleed look */
+  margin-bottom: 2rem;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Pause button centered */
+.pause {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pause:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
