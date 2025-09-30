@@ -114,3 +114,9 @@
 .footer-nav a:hover {
   color: #00bcd4;
 }
+
+.icons{
+  max-width: 30px;
+  max-height: 30px;
+  filter: invert(100%);
+}

@@ -7,7 +7,6 @@ import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
 import Principals from "./pages/Principals/Principals";
 import Contact from "./pages/Contact/Contact";
-import GoToTop from "./components/GoToTop/GoToTop";
 import NotFound from "./pages/NotFound/NotFound";
 
 
@@ -30,7 +29,7 @@ function App() {
           </Route>
           
         </Routes>
-          <GoToTop />
+        
       </div>
       
     </div>

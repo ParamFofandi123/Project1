@@ -2,6 +2,11 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import Breadcrums from "../Breadcrums/Breadcrums"; 
 import GoToTop from "../GoToTop/GoToTop";
+import InstagramIcon from "../../assets/instagram.png"
+import FacebookIcon from "../../assets/facebook.png"
+import TwitterIcon from "../../assets/twitter.png"
+import LinkedinIcon from "../../assets/linkedin.png"
+
 
 import "./Layout.css";
 
@@ -52,7 +57,15 @@ export default function Layout() {
             <p>City, Country</p>
           </div>
         </div>
-
+      <div className="footer-bottom">
+        <h4>Follow Us</h4>
+        <nav className="footer-nav">
+          <Link ><img className="icons" src={InstagramIcon}/></Link>
+          <Link ><img className="icons" src={FacebookIcon}/></Link>
+          <Link ><img className="icons" src={TwitterIcon}/></Link>
+          <Link ><img className="icons" src={LinkedinIcon}/></Link>
+        </nav>
+      </div>
         {/* Bottom Row */}
         <div className="footer-bottom">
           <nav className="footer-nav">

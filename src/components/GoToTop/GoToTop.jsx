@@ -4,7 +4,6 @@ import "./GoToTop.css";
 export default function GoToTop() {
   const [visible, setVisible] = useState(false);
 
-  // Show button after scrolling down
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -21,7 +20,7 @@ export default function GoToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // smooth scroll
+      behavior: "smooth",
     });
   };
 
@@ -29,7 +28,7 @@ export default function GoToTop() {
     <>
       {visible && (
         <button className="go-to-top" onClick={scrollToTop}>
-          ↑
+          ⬆
         </button>
       )}
     </>
