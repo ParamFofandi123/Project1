@@ -33,28 +33,25 @@ export default function Home() {
     <div className="home-container">
       {/* Slideshow Banner */}
       <div className="slideshow">
-        <img src={images[currentIndex]} alt="banner" />
+  {images.map((img, i) => (
+    <img
+      key={i}
+      src={img}
+      alt={`Slide ${i}`}
+      className={`slide ${i === currentIndex ? "active" : ""}`}
+    />
+  ))}
 
-        {/* Previous & Next */}
-        <button className="prev" onClick={prevSlide}>❮</button>
-        <button className="next" onClick={nextSlide}>❯</button>
+  {/* Previous & Next */}
+  <button className="prev" onClick={prevSlide}>❮</button>
+  <button className="next" onClick={nextSlide}>❯</button>
 
-        {/* Pause/Resume in center */}
-        <button className="pause" onClick={togglePause}>
-          {isPaused ? "▶" : "⏸"}
-        </button>
+  {/* Pause/Resume */}
+  <button className="pause" onClick={togglePause}>
+    {isPaused ? "▶" : "⏸"}
+  </button>
+</div>
 
-        {/* Dots */}
-        <div className="dots">
-          {images.map((_, i) => (
-            <span
-              key={i}
-              className={i === currentIndex ? "dot active" : "dot"}
-              onClick={() => setCurrentIndex(i)}
-            ></span>
-          ))}
-        </div>
-      </div>
       <div className="mission-text">
         <h1>
           MISSION

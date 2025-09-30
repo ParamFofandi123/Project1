@@ -1,5 +1,6 @@
 import React from "react";
 import "./Banner.css";
+import Pamphlate from "../../../assets/DWYER.jpg"
 
 export default function Banner() {
   return (
@@ -31,7 +32,7 @@ export default function Banner() {
         {/* Portrait pamphlet */}
         <div className="pamphlet">
           <img
-            src="https://via.placeholder.com/200x300.png?text=Pamphlet"
+            src={Pamphlate}
             alt="Pamphlet"
           />
         </div>

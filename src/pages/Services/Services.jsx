@@ -1,3 +1,15 @@
+import React from "react";
+import Breadcrums from "../../components/Breadcrums/Breadcrums";
+
+
 export default function Services() {
-  return <h1>Our Services ⚙️</h1>;
+  return (
+    <div>
+      <Breadcrums 
+        title="Services" 
+        image="/images/banner.jpg" 
+      />
+      <p>Check out  our amazing Services...</p>
+    </div>
+  );
 }

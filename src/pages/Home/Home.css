@@ -5,94 +5,73 @@
   box-sizing: border-box;
 }
 
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;   /* horizontal center */
   text-align: center;    /* text in center */
   padding: 0;            /* ❌ remove top padding */
-  /* margin-top: 70px;      ✅ offset so it sits just below navbar height */
+  /* margin-top: 70px;     */
   box-sizing: border-box;
   width: 100%;           /* take full width */
 }
 
-/* Slideshow banner full-width */
 .slideshow {
   position: relative;
-  /* width: 100vw;                   ✅ full viewport width */
-  margin-left: calc(50% - 50vw);  /* ✅ cancel parent centering */
-  height: 500px;                  /* ✅ taller */
+  width: 70%;
+    margin-left: calc(50% - 50vw);  /* ✅ cancel parent centering */
+  height: 450px;                  /* ✅ taller */
   overflow: hidden;
-  border-radius: 0;               /* optional: remove curve for full-bleed look */
-  margin-bottom: 2rem;
 }
 
-.slideshow img {
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+    z-index: 0; /* always behind controls */
 }
 
-/* Navigation buttons */
-.prev, .next {
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+   z-index: 0; /* still behind buttons */
+}
+
+/* Controls */
+.prev, .next, .pause {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   color: white;
   border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 50%;
-}
-
-.prev { left: 15px; }
-.next { right: 15px; }
-
-.prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-/* Pause button centered */
-.pause {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 26px;
   cursor: pointer;
   border-radius: 50%;
-  width: 10px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 18px;
+  opacity: 50%;
+  padding: 15px;
+    z-index: 2; /* always above images */
 }
 
-.pause:hover {
-  background: rgba(0,0,0,0.8);
-}
+.prev { top: 50%; left: 15px; transform: translateY(-50%); }
+.next { top: 50%; right: 15px; transform: translateY(-50%); }
+.pause { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-/* Dots */
-.dots {
+.mission-text {
   text-align: center;
-  margin-top: 10px;
+  padding: 20px;
 }
 
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
+.mission-text .paragraph {
+  font-size: 22px;
+  max-width: 70%;   /* ✅ limit width */
+  margin: 0 auto;     /* ✅ center horizontally */
+  padding: 0 20px;    /* ✅ add side padding */
+  line-height: 1.6;   /* better readability */
 }
 
-.dot.active {
-  background-color: #333;
-}

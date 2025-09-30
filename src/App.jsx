@@ -7,6 +7,9 @@ import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
 import Principals from "./pages/Principals/Principals";
 import Contact from "./pages/Contact/Contact";
+import GoToTop from "./components/GoToTop/GoToTop";
+import NotFound from "./pages/NotFound/NotFound";
+
 
 function App() {
   return (
@@ -21,9 +24,15 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/principals" element={<Principals />} />
             <Route path="/contact" element={<Contact />} />
+
+                    <Route path="*" element={<NotFound />} />
+                    
           </Route>
+          
         </Routes>
+          <GoToTop />
       </div>
+      
     </div>
   );
 }

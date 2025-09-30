@@ -1,0 +1,20 @@
+.go-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffffff;      /* match navbar/footer */
+  color: rgb(0, 0, 0);                /* text color */
+  border: none;
+  padding: 12px 15px;          /* slightly bigger */
+  border-radius: 50%;          /* round shape */
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.go-to-top:hover {
+  background-color: #00bcd4;   /* hover highlight */
+  transform: translateY(-3px); /* small lift effect */
+}

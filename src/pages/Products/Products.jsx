@@ -1,3 +1,15 @@
+import React from "react";
+import Breadcrums from "../../components/Breadcrums/Breadcrums";
+
+
 export default function Products() {
-  return <h1>Our Products</h1>;
+  return (
+    <div>
+      <Breadcrums 
+        title="Products" 
+        image="/images/banner.jpg" 
+      />
+      <p>Check out our amazing products...</p>
+    </div>
+  );
 }

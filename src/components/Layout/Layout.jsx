@@ -1,6 +1,8 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import Breadcrums from "../Breadcrums/Breadcrums"; 
+import GoToTop from "../GoToTop/GoToTop";
+
 import "./Layout.css";
 
 export default function Layout() {
@@ -65,6 +67,7 @@ export default function Layout() {
           <p>© {new Date().getFullYear()} MyWebsite. All rights reserved.</p>
         </div>
       </footer>
+      <GoToTop/>
     </div>
   );
 }

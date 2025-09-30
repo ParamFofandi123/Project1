@@ -1,3 +1,15 @@
+import React from "react";
+import Breadcrums from "../../components/Breadcrums/Breadcrums";
+
+
 export default function Principals() {
-  return <h1>Our Principals ⚙️</h1>;
+  return (
+    <div>
+      <Breadcrums 
+        title="Principals" 
+        image="/images/banner.jpg" 
+      />
+      <p>our Principals...</p>
+    </div>
+  );
 }
