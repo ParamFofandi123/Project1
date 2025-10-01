@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Breadcrums from "../Breadcrums/Breadcrums"; 
 import GoToTop from "../GoToTop/GoToTop";
@@ -11,6 +11,26 @@ import LinkedinIcon from "../../assets/linkedin.png"
 import "./Layout.css";
 
 export default function Layout() {
+  const [open, setOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const toggleDropdown = () => {
+    setOpen(!open);
+  };
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
     // const location = useLocation();
 
   // pages where we don't want the banner
@@ -22,7 +42,18 @@ export default function Layout() {
         <h2 className="logo">MyWebsite</h2>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/products">Products</Link></li>
+          <li className="dropdown" ref={dropdownRef}>
+                <button className="dropbtn" onClick={toggleDropdown}>
+              Products ▾
+            </button>
+              {open && (
+              <ul className="dropdown-content">
+                <li><Link to="/products/electronics">Electronics</Link></li>
+                <li><Link to="/products/furniture">Furniture</Link></li>
+                <li><Link to="/products/clothing">Clothing</Link></li>
+              </ul>
+            )}
+              </li>
           <li><Link to="/career">Career</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/principals">Principals</Link></li>
