@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 // import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./components/ScrolToTop";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
@@ -21,6 +22,7 @@ function App() {
       {/* <Navbar /> */}
       <div >
         <Routes>
+          
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />

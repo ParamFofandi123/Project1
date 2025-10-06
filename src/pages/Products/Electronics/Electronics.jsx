@@ -10,6 +10,6 @@ export default function Electronics() {
         image="/images/banner.jpg" 
       />
       <p>Check out our amazing products...</p>
-    </div>
+    </div>  
   );
 }
