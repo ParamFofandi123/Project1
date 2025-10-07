@@ -6,6 +6,7 @@ import InstagramIcon from "../../assets/instagram.png"
 import FacebookIcon from "../../assets/facebook.png"
 import TwitterIcon from "../../assets/twitter.png"
 import LinkedinIcon from "../../assets/linkedin.png"
+import SiteLogo from "../../assets/logo.png"
 
 
 import "./Layout.css";
@@ -39,7 +40,7 @@ export default function Layout() {
     <div className="layout">
       {/* Navbar */}
       <nav className="navbar">
-        <h2 className="logo">MyWebsite</h2>
+        <img className="site-logo" src={SiteLogo} alt="" />
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li className="dropdown" ref={dropdownRef}>
