@@ -39,8 +39,16 @@ export default function Layout() {
   return (
     <div className="layout">
       {/* Navbar */}
-      <nav className="navbar">
+        <div className="top-strip">
+       info@winovasolustions.com
+  </div>
+      
+        
+      <nav className="navbar container">
+          <div className="logo-container">
+
         <img className="site-logo" src={SiteLogo} alt="" />
+        </div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li className="dropdown" ref={dropdownRef}>
@@ -61,10 +69,11 @@ export default function Layout() {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
+  
             {/* {!hideBanner && <Breadcrums title="Welcome to this Page" />} */}
 
       {/* Page Content */}
-      <main className="content">
+      <main className="content container">
         <Outlet />
       </main>
 

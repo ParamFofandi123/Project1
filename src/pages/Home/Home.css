@@ -7,7 +7,8 @@
 
 
 .home-container {
-  display: flex;
+  /* display: flex; */
+  top: 0;
   flex-direction: column;
   align-items: center;   /* horizontal center */
   text-align: center;    /* text in center */
@@ -19,10 +20,14 @@
 
 .slideshow {
   position: relative;
-  width: 70%;
-    margin-left: calc(50% - 50vw);  /* ✅ cancel parent centering */
-  height: 450px;                  /* ✅ taller */
+  width: 100vw;                      /* Full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;                /* Break out of container */
+  margin-right: -50vw;
+  height: 650px;                     /* Make it a bit taller if you want */
   overflow: hidden;
+    margin-top: 0;
 }
 
 .slide {
@@ -32,16 +37,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   opacity: 0;
   transition: opacity 1s ease-in-out;
-    z-index: 0; /* always behind controls */
+  z-index: 0;
 }
 
 .slide.active {
   opacity: 1;
   z-index: 1;
-   z-index: 0; /* still behind buttons */
 }
 
 /* Controls */

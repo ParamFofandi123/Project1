@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-  width: 100vw; /* full viewport width */
+  width: 100%; /* full viewport width */
 
 }
 

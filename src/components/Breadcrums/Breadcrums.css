@@ -1,5 +1,6 @@
 .page-Breadcrums {
-  width: 100vw;                          /* full viewport width */
+  width: 100vw;   
+  height: 400px;                       /* full viewport width */
   margin-left: calc(50% - 50vw);         /* cancel out parent padding */
   position: relative;
   text-align: center;
@@ -15,6 +16,7 @@
 
 .page-Breadcrums h2 {
   font-size: 2.5rem;
+  padding-top: 100px;
   margin: 0;
 }
 
