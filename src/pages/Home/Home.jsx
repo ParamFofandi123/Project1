@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import "./Banner/Banner"
+import "./Banner/Banner";
 import Banner from "./Banner/Banner";
 
 export default function Home() {
@@ -8,61 +8,67 @@ export default function Home() {
     "https://picsum.photos/id/1018/1200/400",
     "https://picsum.photos/id/1015/1200/400",
     "https://picsum.photos/id/1019/1200/400",
-    "https://picsum.photos/id/1020/1200/400"
+    "https://picsum.photos/id/1020/1200/400",
+  ];
+
+  const slideTexts = [
+    { title: "Welcome to Our Website", subtitle: "Delivering quality and innovation" },
+    { title: "Explore Our Products", subtitle: "Top-notch quality you can trust" },
+    { title: "Creative Solutions", subtitle: "Driven by technology and passion" },
+    { title: "Let's Build Together", subtitle: "Partner with us for success" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto slideshow
+ 
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
-
     return () => clearInterval(interval);
-  }, [images.length, isPaused]);
+  }, [images.length]);
 
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  const togglePause = () => setIsPaused((prev) => !prev);
+  const prevSlide = () =>
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <div className="home-container">
       {/* Slideshow Banner */}
       <div className="slideshow">
   {images.map((img, i) => (
-    <img
+    <div
       key={i}
-      src={img}
-      alt={`Slide ${i}`}
       className={`slide ${i === currentIndex ? "active" : ""}`}
-    />
+      style={{ backgroundImage: `url(${img})` }}
+    >
+      <div className="slide-text">
+        <h1>{slideTexts[i].title}</h1>
+        <p>{slideTexts[i].subtitle}</p>
+      </div>
+    </div>
   ))}
 
   {/* Previous & Next */}
-  <button className="prev" onClick={prevSlide}>❮</button>
-  <button className="next" onClick={nextSlide}>❯</button>
-
-  {/* Pause/Resume */}
-  <button className="pause" onClick={togglePause}>
-    {isPaused ? "▶" : "⏸"}
+  <button className="prev" onClick={prevSlide}>
+    ❮
+  </button>
+  <button className="next" onClick={nextSlide}>
+    ❯
   </button>
 </div>
 
       <div className="mission-text">
-        <h1>
-          MISSION
-        </h1>
+        <h1>MISSION</h1>
         <p className="paragraph">
-          Our Mission is to be committed and continuously improve in all our business activities in order to serve our Customers and Provide cost effective 
-          best possible solution and a comprehensive range of high standard performance and most cost-effective products, through our internationally recognized Principals.
+          Our Mission is to be committed and continuously improve in all our
+          business activities in order to serve our Customers and Provide cost
+          effective best possible solution and a comprehensive range of high
+          standard performance and most cost-effective products, through our
+          internationally recognized Principals.
         </p>
       </div>
-      <Banner/>
-
+      <Banner />
     </div>
   );
 }
