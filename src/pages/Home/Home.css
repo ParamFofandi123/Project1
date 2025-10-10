@@ -5,88 +5,98 @@
   box-sizing: border-box;
 }
 
-
 .home-container {
-  /* display: flex; */
   top: 0;
   flex-direction: column;
-  align-items: center;   /* horizontal center */
-  text-align: center;    /* text in center */
-  padding: 0;            /* ❌ remove top padding */
-  /* margin-top: 70px;     */
+  align-items: center;
+  text-align: center;
+  padding: 0;
   box-sizing: border-box;
-  width: 100%;           /* take full width */
+  width: 100%;
 }
 
 .slideshow {
   position: relative;
-  width: 100vw;                      /* Full viewport width */
+  width: 100vw;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;                /* Break out of container */
+  margin-left: -50vw;
   margin-right: -50vw;
-  height: 650px;                     /* Make it a bit taller if you want */
+  height: 650px;
   overflow: hidden;
-    margin-top: 0;
+  margin-top: 0;
 }
 
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+/* Track for sliding animation */
+.slider-track {
+  display: flex;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
+  transition: transform 3.5s ease-in-out;
+  will-change: transform;
 }
+
+/* Each slide */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Text overlay */
 .slide-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -10%);
   text-align: center;
   color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   opacity: 0;
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.4s;
-  z-index: 2; /* above images and behind buttons */
+  transition: all 2s ease;
+}
+
+.slide-text.animate {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 .slide-text h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5rem;
 }
 
 .slide-text p {
-  font-size: 1.4rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Controls */
 .prev, .next {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 50%;
   font-size: 18px;
-  opacity: 50%;
+  opacity: 0.6;
   padding: 15px;
-    z-index: 2; /* always above images */
+  z-index: 2;
+  transition: background 0.3s;
 }
 
-.prev { top: 50%; left: 15px; transform: translateY(-50%); }
-.next { top: 50%; right: 15px; transform: translateY(-50%); }
-.pause { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
 
 .mission-text {
   text-align: center;
@@ -95,13 +105,14 @@
 
 .mission-text .paragraph {
   font-size: 22px;
-  max-width: 70%;   /* ✅ limit width */
-  margin: 0 auto;     /* ✅ center horizontally */
-  padding: 0 20px;    /* ✅ add side padding */
-  line-height: 1.6;   /* better readability */
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0 20px;
+  line-height: 1.6;
 }
 
-@keyframes fadeUp {
+/* Text fade-up animation for small screens */
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translate(-50%, -40%);
@@ -109,5 +120,17 @@
   to {
     opacity: 1;
     transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-text h1 {
+    font-size: 2rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+    padding: 0 20px;
   }
 }

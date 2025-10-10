@@ -7,6 +7,8 @@ import FacebookIcon from "../../assets/facebook.png"
 import TwitterIcon from "../../assets/twitter.png"
 import LinkedinIcon from "../../assets/linkedin.png"
 import SiteLogo from "../../assets/logo.png"
+import Email from "../../assets/mail.png"
+import Phone from "../../assets/phone-call.png"
 
 
 import "./Layout.css";
@@ -40,7 +42,17 @@ export default function Layout() {
     <div className="layout">
       {/* Navbar */}
         <div className="top-strip">
-       info@winovasolustions.com
+          <div className="contact-info">
+  <div className="contact-item">
+    <img src={Email} alt="email" />
+    <span>info.winovasolutions@gmail.com</span>
+  </div>
+  <div className="contact-item">
+    <img src={Phone} alt="phone" />
+    <span>+91 7738163686 / +971 506604885</span>
+  </div>
+</div>
+       
   </div>
       
         
@@ -89,13 +101,14 @@ export default function Layout() {
           </div>
           <div className="footer-col">
             <h3>Contact</h3>
-            <p>📞 +91 9876543210</p>
-            <p>✉️ info@mywebsite.com</p>
+            <p>+91 7738163686 / +971 506604885</p>
+            <p>info.winovasolutions@gmail.com</p>
           </div>
           <div className="footer-col">
             <h3>Address</h3>
-            <p>📍 123 Main Street</p>
-            <p>City, Country</p>
+            <p>A, 14, Shree Guppi Hariya Inds. estate, </p>
+            <p>Saki Vihar Rd, opp. Ansa, Andheri East, </p>
+            <p>Mumbai, Maharashtra 400072, India</p>
           </div>
         </div>
       <div className="footer-bottom">
