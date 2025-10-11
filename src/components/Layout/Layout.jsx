@@ -14,6 +14,8 @@ import Phone from "../../assets/phone-call.png"
 import "./Layout.css";
 
 export default function Layout() {
+
+  // Dropdown product menu
   const [open, setOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -34,10 +36,7 @@ export default function Layout() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-    // const location = useLocation();
-
-  // pages where we don't want the banner
-  // const hideBanner = location.pathname === "/";
+    
   return (
     <div className="layout">
       {/* Navbar */}
@@ -63,18 +62,22 @@ export default function Layout() {
         </div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
+          {/* <li><Link to="/products">Products</Link></li> */}
+
           <li className="dropdown" ref={dropdownRef}>
                 <button className="dropbtn" onClick={toggleDropdown}>
               Products ▾
             </button>
               {open && (
               <ul className="dropdown-content">
-                <li><Link to="/products/electronics">Electronics</Link></li>
-                <li><Link to="/products/furniture">Furniture</Link></li>
-                <li><Link to="/products/clothing">Clothing</Link></li>
+                <li><Link to="/products/flow">Flow</Link></li>
+                <li><Link to="/products/level">Level</Link></li>
+                <li><Link to="/products/temperature">Temperture</Link></li>
               </ul>
             )}
               </li>
+
+
           <li><Link to="/career">Career</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/principals">Principals</Link></li>

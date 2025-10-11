@@ -129,7 +129,16 @@ export default function Home() {
           internationally recognized Principals.
         </p>
       </div>
+          <div className="our-products">
+            <h1>OUR PRODUCTS</h1>
+            <div className="product-row">
+              <div className="product-box">
+                <img/>
+                <p className="paragraph"></p>
+              </div>
+            </div>
 
+          </div>
       <Banner />
     </div>
   );

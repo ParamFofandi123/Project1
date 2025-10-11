@@ -5,9 +5,9 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 
-import Electronics from "./pages/Products/Electronics/Electronics";
-import Furniture from "./pages/Products/Products";
-import Clothing from "./pages/Products/Products";
+import Flow from "./pages/Products/Flow/Flow";
+import Level from "./pages/Products/Level/Level";
+import Temperature from "./pages/Products/Temperature/Temperature";
 
 import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
@@ -26,9 +26,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/electronics" element={<Electronics/>}/>
-            <Route path="/products/furniture" element={<Furniture/>}/>
-            <Route path="/products/clothing" element={<Clothing/>}/>
+            <Route path="/products/flow" element={<Flow/>}/>
+            <Route path="/products/level" element={<Level/>}/>
+            <Route path="/products/temperature" element={<Temperature/>}/>
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
             <Route path="/principals" element={<Principals />} />
