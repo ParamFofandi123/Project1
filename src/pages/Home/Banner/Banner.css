@@ -1,16 +1,17 @@
 .banner {
-
+width: 100vw;              /* full viewport width */
+  margin-left: calc(50% - 50vw); 
   background: linear-gradient(135deg, #222, #444);
   padding: 50px 20px;
   display: flex;
   justify-content: center;
   overflow: hidden;
-  width: 100%; /* full viewport width */
 
 }
 
 
 .banner-content {
+  
   display: flex;
   align-items: center;
   gap: 30px; /* space between videos & pamphlet */

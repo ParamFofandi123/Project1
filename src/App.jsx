@@ -15,33 +15,27 @@ import Principals from "./pages/Principals/Principals";
 import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
 
-
 function App() {
   return (
     <div>
       {/* <Navbar /> */}
-      <div >
+      <div>
         <Routes>
-          
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/flow" element={<Flow/>}/>
-            <Route path="/products/level" element={<Level/>}/>
-            <Route path="/products/temperature" element={<Temperature/>}/>
+            <Route path="/products/flow" element={<Flow />} />
+            <Route path="/products/level" element={<Level />} />
+            <Route path="/products/temperature" element={<Temperature />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
             <Route path="/principals" element={<Principals />} />
             <Route path="/contact" element={<Contact />} />
 
-                    <Route path="*" element={<NotFound />} />
-                    
+            <Route path="*" element={<NotFound />} />
           </Route>
-          
         </Routes>
-        
       </div>
-      
     </div>
   );
 }
