@@ -16,6 +16,20 @@ export default function Layout() {
   // Dropdown product menu
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
+    const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDropdown = () => {
     setOpen(!open);
@@ -50,7 +64,7 @@ export default function Layout() {
         </div>
       </div>
 
-      <nav className="navbar container">
+      <nav className={`navbar ${scrolled ? "scrolled" : ""} container`}>
         <div className="logo-container">
           <img className="site-logo" src={SiteLogo} alt="" />
         </div>
@@ -102,63 +116,72 @@ export default function Layout() {
       </main>
 
       <footer className="footer full-width-footer">
-  <div className="footer-inner">
-    {/* Top Section: Logo + Columns */}
-    <div className="footer-top">
-      {/* Left Logo */}
-      <div className="footer-logo">
-        <img src={SiteLogo} alt="Company Logo" />
-      </div>
+        <div className="footer-inner">
+          {/* Top Section: Logo + Columns */}
+          <div className="footer-top">
+            {/* Left Logo */}
+            <div className="footer-logo">
+              <img src={SiteLogo} alt="Company Logo" />
+            </div>
 
-      {/* Right Columns */}
-      <div className="footer-columns">
-        <div className="footer-col">
-          <h3>About Us</h3>
-          <p>We provide innovative solutions tailored to your business needs.</p>
+            {/* Right Columns */}
+            <div className="footer-columns">
+              <div className="footer-col">
+                <h3>About Us</h3>
+                <p>
+                  We provide innovative solutions tailored <br/>to your business
+                  needs.
+                </p>
+              </div>
+
+              <div className="footer-col">
+                <h3>Contact</h3>
+                <p>+91 7738163686 / +971 506604885</p>
+                <p>info.winovasolutions@gmail.com</p>
+              </div>
+
+              <div className="footer-col">
+                <h3>Address</h3>
+                <p>A, 14, Shree Guppi Hariya Inds. estate,</p>
+                <p>Saki Vihar Rd, opp. Ansa, Andheri East,</p>
+                <p>Mumbai, Maharashtra 400072, India</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="footer-social">
+            <h4>Follow Us</h4>
+            <div className="footer-icons">
+              <a href="#">
+                <img className="icon" src={InstagramIcon} alt="Instagram" />
+              </a>
+              <a href="#">
+                <img className="icon" src={FacebookIcon} alt="Facebook" />
+              </a>
+              <a href="#">
+                <img className="icon" src={TwitterIcon} alt="Twitter" />
+              </a>
+              <a href="#">
+                <img className="icon" src={LinkedinIcon} alt="LinkedIn" />
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Navigation */}
+          <div className="footer-bottom">
+            <nav className="footer-nav">
+              <Link to="/">Home</Link>
+              <Link to="/products">Products</Link>
+              <Link to="/career">Career</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/principals">Principals</Link>
+              <Link to="/contact">Contact</Link>
+            </nav>
+            <p>© {new Date().getFullYear()} MyWebsite. All rights reserved.</p>
+          </div>
         </div>
-
-        <div className="footer-col">
-          <h3>Contact</h3>
-          <p>+91 7738163686 / +971 506604885</p>
-          <p>info.winovasolutions@gmail.com</p>
-        </div>
-
-        <div className="footer-col">
-          <h3>Address</h3>
-          <p>A, 14, Shree Guppi Hariya Inds. estate,</p>
-          <p>Saki Vihar Rd, opp. Ansa, Andheri East,</p>
-          <p>Mumbai, Maharashtra 400072, India</p>
-        </div>
-      </div>
-    </div>
-
-    {/* Social Icons */}
-    <div className="footer-social">
-      <h4>Follow Us</h4>
-      <div className="footer-icons">
-        <a href="#"><img className="icon" src={InstagramIcon} alt="Instagram" /></a>
-        <a href="#"><img className="icon" src={FacebookIcon} alt="Facebook" /></a>
-        <a href="#"><img className="icon" src={TwitterIcon} alt="Twitter" /></a>
-        <a href="#"><img className="icon" src={LinkedinIcon} alt="LinkedIn" /></a>
-      </div>
-    </div>
-
-    {/* Bottom Navigation */}
-    <div className="footer-bottom">
-      <nav className="footer-nav">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/career">Career</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/principals">Principals</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <p>© {new Date().getFullYear()} MyWebsite. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-
+      </footer>
 
       <GoToTop />
     </div>

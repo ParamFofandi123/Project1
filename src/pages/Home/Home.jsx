@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Banner from "./Banner/Banner";
+import slide1 from "../../assets/slide1.jpg";
+import slide2 from "../../assets/slide2.jpg";
+import slide3 from "../../assets/slide3.jpg";
+import slide4 from "../../assets/slide4.jpg";
 
 export default function Home() {
-  const images = [
-    "https://picsum.photos/id/1018/1200/400",
-    "https://picsum.photos/id/1015/1200/400",
-    "https://picsum.photos/id/1019/1200/400",
-    "https://picsum.photos/id/1020/1200/400",
-  ];
+  const images = [slide1, slide2, slide3, slide4];
 
   const slideTexts = [
-    { title: "Welcome to Our Website", subtitle: "Delivering quality and innovation" },
-    { title: "Explore Our Products", subtitle: "Top-notch quality you can trust" },
-    { title: "Creative Solutions", subtitle: "Driven by technology and passion" },
+    {
+      title: "Welcome to Our Website",
+      subtitle: "Delivering quality and innovation",
+    },
+    {
+      title: "Explore Our Products",
+      subtitle: "Top-notch quality you can trust",
+    },
+    {
+      title: "Creative Solutions",
+      subtitle: "Driven by technology and passion",
+    },
     { title: "Let's Build Together", subtitle: "Partner with us for success" },
   ];
 
@@ -72,7 +80,9 @@ export default function Home() {
           className="slider-track"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            transition: transitionEnabled ? "transform 0.3s ease-in-out" : "none",
+            transition: transitionEnabled
+              ? "transform 0.3s ease-in-out"
+              : "none",
           }}
         >
           {/* Clone of last slide at beginning */}
@@ -88,7 +98,11 @@ export default function Home() {
 
           {/* Real slides */}
           {images.map((img, i) => (
-            <div key={i} className="slide" style={{ backgroundImage: `url(${img})` }}>
+            <div
+              key={i}
+              className="slide"
+              style={{ backgroundImage: `url(${img})` }}
+            >
               <div
                 className={`slide-text ${
                   animateText && currentIndex === i + 1 ? "animate" : ""
@@ -101,7 +115,10 @@ export default function Home() {
           ))}
 
           {/* Clone of first slide at end */}
-          <div className="slide" style={{ backgroundImage: `url(${images[0]})` }}>
+          <div
+            className="slide"
+            style={{ backgroundImage: `url(${images[0]})` }}
+          >
             <div className="slide-text">
               <h1>{slideTexts[0].title}</h1>
               <p>{slideTexts[0].subtitle}</p>
@@ -122,23 +139,24 @@ export default function Home() {
       <div className="mission-text">
         <h1>MISSION</h1>
         <p className="paragraph">
-          Our Mission is to be committed and continuously improve in all our
-          business activities in order to serve our Customers and Provide cost
-          effective best possible solution and a comprehensive range of high
-          standard performance and most cost-effective products, through our
-          internationally recognized Principals.
+          Our mission is to remain fully committed to excellence and continuous
+          improvement across all our business activities. We aim to serve our
+          customers by delivering cost-effective, high-performance solutions and
+          a comprehensive range of reliable products. Through collaboration with
+          our internationally recognized principals, we strive to provide the
+          best possible solutions that meet global standards and exceed customer
+          expectations.
         </p>
       </div>
-          <div className="our-products">
-            <h1>OUR PRODUCTS</h1>
-            <div className="product-row">
-              <div className="product-box">
-                <img/>
-                <p className="paragraph"></p>
-              </div>
-            </div>
-
+      <div className="our-products">
+        <h1>OUR PRODUCTS</h1>
+        <div className="product-row">
+          <div className="product-box">
+            <img />
+            <p className="paragraph"></p>
           </div>
+        </div>
+      </div>
       <Banner />
     </div>
   );

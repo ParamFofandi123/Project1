@@ -1,17 +1,14 @@
 .banner {
-width: 100vw;              /* full viewport width */
-  margin-left: calc(50% - 50vw); 
-  background: linear-gradient(135deg, #222, #444);
+  width: 100vw; /* full viewport width */
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(135deg, #0f065e, #48437a);
   padding: 50px 20px;
   display: flex;
   justify-content: center;
   overflow: hidden;
-
 }
 
-
 .banner-content {
-  
   display: flex;
   align-items: center;
   gap: 30px; /* space between videos & pamphlet */
@@ -33,9 +30,27 @@ width: 100vw;              /* full viewport width */
   width: auto;
   height: 400px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+.vision-text {
+  text-align: left;
+  padding: 10px;
+  background-color: aliceblue;
+  max-width: 40%;
+}
+
+.vision-text .paragraph {
+  font-size: 18px;
+  /* max-width: 40%; */
+  /* margin: 0 auto; */
+  padding: 0 30px;
+  line-height: 1.6;
+}
+.vision-text h2 {
+  color: rgb(1, 1, 102);
+  padding-left: 10px;
+}
 /* Responsive */
 @media (max-width: 900px) {
   .banner-content {

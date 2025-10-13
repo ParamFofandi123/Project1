@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .top-strip {
-  position: fixed;
+  position:absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,6 +16,7 @@
   font-size: 14px;
   z-index: 1100; /* higher than navbar */
 }
+
 
 .contact-info {
   display: flex;
@@ -52,6 +53,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+    transition: all 0.6s ease;   /* Smooth animation */
   z-index: 1000;
   box-sizing: border-box;
   /* border-radius: 0 0 10px 10px; optional: gives a nice rounded bottom */
@@ -72,7 +74,16 @@
   display: block;
 }
 
+.navbar.scrolled {
+  top:0;
+  height: 80px;               /* Smaller height */
+  background-color: #c8c8c8;  /* optional: slight color change */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
 
+.navbar.scrolled .site-logo {
+  height: 70px;              /* Shrink the logo too */
+}
 
 /* Page content (everything below navbar) */
 .content {

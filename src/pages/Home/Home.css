@@ -110,6 +110,9 @@
   padding: 0 20px;
   line-height: 1.6;
 }
+.mission-text h1{
+  color: rgb(1, 1, 102);
+}
 
 /* Text fade-up animation for small screens */
 @keyframes fadeInUp {
