@@ -11,7 +11,7 @@ import Temperature from "./pages/Products/Temperature/Temperature";
 
 import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
-import Principals from "./pages/Principals/Principals";
+import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
 
@@ -29,7 +29,7 @@ function App() {
             <Route path="/products/temperature" element={<Temperature />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
-            <Route path="/principals" element={<Principals />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
             <Route path="*" element={<NotFound />} />

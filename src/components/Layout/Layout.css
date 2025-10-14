@@ -1,3 +1,11 @@
+button{
+  transition: none;
+  border-radius: 0px;
+  outline: none;
+}
+button:focus{
+  outline: none;
+}
 .container {
   max-width: 1200px;   /* adjust as you like */
   margin: 0 auto;
@@ -72,6 +80,7 @@
   object-fit: contain;
   cursor: pointer;
   display: block;
+  transition :all 0.5s ease;
 }
 
 .navbar.scrolled {
@@ -135,6 +144,7 @@
 
 .dropdown {
   position: relative;
+  border: none;
 }
 
 
@@ -142,11 +152,11 @@
   position: absolute;
   top: 2.5rem;
   left: 0;
-  background: white;
+  background: #dadada;
   list-style: none;
   padding: 0.5rem 0;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   min-width: 160px;
   z-index: 10;
 }
@@ -241,6 +251,21 @@
 .footer-col h3 {
   margin-bottom: 10px;
   font-size: 18px;
+}
+
+.footer-products ul {
+  list-style: none;   /* removes bullet points */
+  padding: 0;        /* removes default padding */
+  margin: 0;         /* removes default margin */
+}
+
+.footer-products li {
+  margin-bottom: 8px; /* optional spacing between links */
+}
+
+.footer-products a {
+  text-decoration: none;  /* removes underline */
+  color: inherit;         /* uses the parent text color */
 }
 
 /* Social section */

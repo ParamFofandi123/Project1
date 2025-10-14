@@ -38,12 +38,17 @@
   padding: 10px;
   background-color: aliceblue;
   max-width: 40%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
+.vision-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 .vision-text .paragraph {
   font-size: 18px;
-  /* max-width: 40%; */
-  /* margin: 0 auto; */
   padding: 0 30px;
   line-height: 1.6;
 }
@@ -59,5 +64,12 @@
 
   .videos {
     flex-direction: column;
+  }
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

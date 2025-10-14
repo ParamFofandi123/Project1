@@ -16,7 +16,7 @@ export default function Layout() {
   // Dropdown product menu
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
-    const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +100,7 @@ export default function Layout() {
             <Link to="/services">Services</Link>
           </li>
           <li>
-            <Link to="/principals">Principals</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
@@ -129,22 +129,44 @@ export default function Layout() {
               <div className="footer-col">
                 <h3>About Us</h3>
                 <p>
-                  We provide innovative solutions tailored <br/>to your business
-                  needs.
+                  We provide innovative solutions tailored <br />
+                  to your business needs.
                 </p>
               </div>
 
               <div className="footer-col">
-                <h3>Contact</h3>
-                <p>+91 7738163686 / +971 506604885</p>
-                <p>info.winovasolutions@gmail.com</p>
+                <h3>Our Products</h3>
+                <nav className="footer-products">
+                  <ul>
+                    <li>
+                      <Link to="/products/flow">Flow</Link>
+                    </li>
+                    <li>
+                      <Link to="/products/level">Level</Link>
+                    </li>
+                    <li>
+                      <Link to="/products/temperature">Temperture</Link>
+                    </li>
+                  </ul>
+                </nav>
               </div>
 
               <div className="footer-col">
+                <h3>Contact</h3>
+                <p>
+                  +91 7738163686 / +971 506604885
+                  <br />
+                  info.winovasolutions@gmail.com
+                </p>
+
                 <h3>Address</h3>
-                <p>A, 14, Shree Guppi Hariya Inds. estate,</p>
-                <p>Saki Vihar Rd, opp. Ansa, Andheri East,</p>
-                <p>Mumbai, Maharashtra 400072, India</p>
+                <p>
+                  A, 14, Shree Guppi Hariya Inds. estate,
+                  <br />
+                  Saki Vihar Rd, opp. Ansa, Andheri East,
+                  <br />
+                  Mumbai, Maharashtra 400072, Indiax
+                </p>
               </div>
             </div>
           </div>
@@ -175,10 +197,13 @@ export default function Layout() {
               <Link to="/products">Products</Link>
               <Link to="/career">Career</Link>
               <Link to="/services">Services</Link>
-              <Link to="/principals">Principals</Link>
+              <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
             </nav>
-            <p>© {new Date().getFullYear()} MyWebsite. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} <strong>Winova Solutions</strong>.
+              All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

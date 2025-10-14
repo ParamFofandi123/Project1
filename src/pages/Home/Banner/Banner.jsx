@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Banner.css";
 import Pamphlate from "../../../assets/DWYER.jpg";
 import Card1 from "../../../assets/Visiting_Card_01.jpg";
 import Card2 from "../../../assets/Visiting_Card_02.jpg";
 
 export default function Banner() {
+    const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="banner">
       <div className="banner-content">
@@ -39,7 +55,7 @@ export default function Banner() {
           />
                 
         </div> */}
-        <div className="vision-text">
+        <div ref={ref} className={`vision-text ${visible ? "animate" : ""}`} >
           <h2>Our Vision</h2>
           <p className="paragraph">
             Our vision is to become a trusted global leader in the field of
