@@ -145,6 +145,7 @@ button:focus{
 .dropdown {
   position: relative;
   border: none;
+  transition: 3.5s ease-in;
 }
 
 
@@ -159,6 +160,8 @@ button:focus{
   /* border-radius: 6px; */
   min-width: 160px;
   z-index: 10;
+  
+  
 }
 
 .dropdown-content li {

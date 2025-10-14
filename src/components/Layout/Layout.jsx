@@ -75,11 +75,11 @@ export default function Layout() {
           {/* <li><Link to="/products">Products</Link></li> */}
 
           <li className="dropdown" ref={dropdownRef}>
-            <button className="dropbtn" onClick={toggleDropdown}>
+            <button className={`dropbtn ${open ? "active" : ""}`} onClick={toggleDropdown}>
               Products ▾
             </button>
             {open && (
-              <ul className="dropdown-content">
+              <ul className={`dropdown-content ${open ? "open" : ""}`}>
                 <li>
                   <Link to="/products/flow">Flow</Link>
                 </li>
