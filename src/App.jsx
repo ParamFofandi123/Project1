@@ -5,9 +5,9 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 
-import Flow from "./pages/Products/Flow/Flow";
-import Level from "./pages/Products/Level/Level";
-import Temperature from "./pages/Products/Temperature/Temperature";
+import Floats from "./pages/Products/Floats/Floats";
+import Level_instruments_and_flappers from "./pages/Products/Level_instruments_and_flappers/Level_instruments_and_flappers";
+import Valves_and_Fittings from "./pages/Products/Valves_and_Fittings/Valves_and_Fittings";
 
 import Career from "./pages/Career/Career";
 import Services from "./pages/Services/Services";
@@ -24,9 +24,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/flow" element={<Flow />} />
-            <Route path="/products/level" element={<Level />} />
-            <Route path="/products/temperature" element={<Temperature />} />
+            <Route path="/products/floats" element={<Floats />} />
+            <Route path="/products/Level-&-Flappers" element={<Level_instruments_and_flappers />} />
+            <Route path="/products/Valves-and-Fittings" element={<Valves_and_Fittings />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<About />} />

@@ -17,6 +17,8 @@ export default function Layout() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
+ 
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +33,16 @@ export default function Layout() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleDropdown = () => {
-    setOpen(!open);
+  
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    // Small delay (e.g., 200ms) before closing
+    timeoutRef.current = setTimeout(() => setOpen(false), 200);
   };
 
   useEffect(() => {
@@ -74,24 +84,37 @@ export default function Layout() {
           </li>
           {/* <li><Link to="/products">Products</Link></li> */}
 
-          <li className="dropdown" ref={dropdownRef}>
-            <button className={`dropbtn ${open ? "active" : ""}`} onClick={toggleDropdown}>
-              Products ▾
-            </button>
-            {open && (
-              <ul className={`dropdown-content ${open ? "open" : ""}`}>
-                <li>
-                  <Link to="/products/flow">Flow</Link>
-                </li>
-                <li>
-                  <Link to="/products/level">Level</Link>
-                </li>
-                <li>
-                  <Link to="/products/temperature">Temperture</Link>
-                </li>
-              </ul>
-            )}
-          </li>
+          <li
+  className="dropdown"
+  ref={dropdownRef}
+       onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+>
+  {/* When clicked, navigate to /products */}
+  <Link
+    to="/products"
+    className={`dropbtn ${open ? "active" : ""}`}
+    onClick={() => setOpen(false)} // closes dropdown when clicked
+  >
+    Products ▾
+  </Link>
+
+  {/* Dropdown menu (same structure, no CSS change) */}
+  {open && (
+    <ul className={`dropdown-content ${open ? "open" : ""}`}>
+      <li>
+        <Link to="/products/floats">Flow</Link>
+      </li>
+      <li>
+        <Link to="/products/Level-and-Flappers">Level & Flappers</Link>
+      </li>
+      <li>
+        <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>
+      </li>
+    </ul>
+  )}
+</li>
+
 
           <li>
             <Link to="/career">Career</Link>
@@ -139,13 +162,13 @@ export default function Layout() {
                 <nav className="footer-products">
                   <ul>
                     <li>
-                      <Link to="/products/flow">Flow</Link>
+                      <Link to="/products/floats">Floats</Link>
                     </li>
                     <li>
-                      <Link to="/products/level">Level</Link>
+                      <Link to="/products/Level-&-Flappers">Level & Flappers</Link>
                     </li>
                     <li>
-                      <Link to="/products/temperature">Temperture</Link>
+                      <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>
                     </li>
                   </ul>
                 </nav>

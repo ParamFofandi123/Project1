@@ -8,12 +8,12 @@ export default function Products() {
     <div>
       <Breadcrums title="Products" image="/images/banner.jpg" />
       <div className="products-container">
-        {products.map((product) => (
-          <div key={product.id} className="product-card">
+        {products.map((products) => (
+          <div key={products.id} className="product-card">
             <div className="product-image-wrapper">
-              <img src={product.img} alt={product.name} />
+              <img src={products.image} alt={products.name} />
             </div>
-            <h3>{product.name}</h3>
+            <h3>{products.name}</h3>
           </div>
         ))}
       </div>

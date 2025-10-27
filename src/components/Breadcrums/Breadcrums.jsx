@@ -14,18 +14,20 @@ export default function Breadcrums({ title, image }) {
       <h2>{title}</h2>
 
       <nav className="Breadcrums-nav">
-        <Link to="/">Home</Link>
-        {pathnames.map((name, index) => {
-          const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-          return (
-            <span key={index}>
-              {" / "}
-              <Link to={routeTo}>
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-              </Link>
-            </span>
-          );
-        })}
+     <Link to="/">Home</Link>
+      {pathnames.map((name, index) => {
+        const routeTo = "/" + pathnames.slice(0, index + 1).join("/");
+        const formattedName = name
+          .replace(/-/g, " ") // replaces hyphens with spaces
+          .replace(/\b\w/g, (char) => char.toUpperCase()); // capitalizes words
+
+        return (
+          <span key={index}>
+            {" > "}
+            <Link to={routeTo}>{formattedName}</Link>
+          </span>
+        );
+      })}
       </nav>
     </div>
   );

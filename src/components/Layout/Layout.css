@@ -158,7 +158,8 @@ button:focus{
   padding: 0.5rem 0;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   /* border-radius: 6px; */
-  min-width: 160px;
+  min-width: 220px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
   
   
@@ -326,7 +327,7 @@ button:focus{
   .footer-columns {
     flex-direction: column;
     align-items: center;
-  }
+  } 
 
   .footer-col {
     margin-bottom: 20px;
