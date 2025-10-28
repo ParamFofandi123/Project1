@@ -17,7 +17,7 @@ export default function Layout() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
- 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -33,15 +33,12 @@ export default function Layout() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
-
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
     setOpen(true);
   };
 
   const handleMouseLeave = () => {
-    // Small delay (e.g., 200ms) before closing
     timeoutRef.current = setTimeout(() => setOpen(false), 200);
   };
 
@@ -58,9 +55,25 @@ export default function Layout() {
     };
   }, []);
 
+  // Close mobile menu when clicking a link
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setOpen(false);
+  };
+
+  // Toggle hamburger menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  // Toggle dropdown in mobile
+  const toggleDropdown = () => {
+    setOpen(!open);
+  };
+
   return (
     <div className="layout">
-      {/* Navbar */}
+      {/* Top Strip */}
       <div className="top-strip">
         <div className="contact-info">
           <div className="contact-item">
@@ -74,70 +87,111 @@ export default function Layout() {
         </div>
       </div>
 
+      {/* Navbar */}
       <nav className={`navbar ${scrolled ? "scrolled" : ""} container`}>
         <div className="logo-container">
-          <img className="site-logo" src={SiteLogo} alt="" />
+          <Link to="/" onClick={closeMobileMenu}>
+            <img className="site-logo" src={SiteLogo} alt="Logo" />
+          </Link>
         </div>
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          {/* <li><Link to="/products">Products</Link></li> */}
 
+        {/* Hamburger Icon */}
+        <div
+          className={`hamburger ${mobileMenuOpen ? "active" : ""}`}
+          onClick={toggleMobileMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
+          <li>
+            <Link to="/" onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+
+          {/* Products Dropdown */}
           <li
-  className="dropdown"
-  ref={dropdownRef}
-       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
->
-  {/* When clicked, navigate to /products */}
-  <Link
-    to="/products"
-    className={`dropbtn ${open ? "active" : ""}`}
-    onClick={() => setOpen(false)} // closes dropdown when clicked
-  >
-    Products ▾
-  </Link>
+            className="dropdown"
+            ref={dropdownRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link
+              to="/products"
+              className={`dropbtn ${open ? "active" : ""}`}
+              onClick={(e) => {
+                // On mobile, toggle dropdown; on desktop, navigate
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown();
+                } else {
+                  closeMobileMenu();
+                }
+              }}
+            >
+              Products ▾
+            </Link>
 
-  {/* Dropdown menu (same structure, no CSS change) */}
-  {open && (
-    <ul className={`dropdown-content ${open ? "open" : ""}`}>
-      <li>
-        <Link to="/products/floats">Floats</Link>
-      </li>
-      <li>
-        <Link to="/products/Level-instruments-and-Flappers">Level instruments and Flappers</Link>
-      </li>
-      <li>
-        <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>
-      </li>
-    </ul>
-  )}
-</li>
-
+            {open && (
+              <ul className={`dropdown-content ${open ? "open" : ""}`}>
+                <li>
+                  <Link to="/products/floats" onClick={closeMobileMenu}>
+                    Floats
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/Level-instruments-and-Flappers"
+                    onClick={closeMobileMenu}
+                  >
+                    Level instruments and Flappers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/Valves-and-Fittings"
+                    onClick={closeMobileMenu}
+                  >
+                    Valves and Fittings
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
 
           <li>
-            <Link to="/career">Career</Link>
+            <Link to="/career" onClick={closeMobileMenu}>
+              Career
+            </Link>
           </li>
           <li>
-            <Link to="/services">Services</Link>
+            <Link to="/services" onClick={closeMobileMenu}>
+              Services
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={closeMobileMenu}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" onClick={closeMobileMenu}>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
-
-      {/* {!hideBanner && <Breadcrums title="Welcome to this Page" />} */}
 
       {/* Page Content */}
       <main className="content container">
         <Outlet />
       </main>
 
+      {/* Footer */}
       <footer className="footer full-width-footer">
         <div className="footer-inner">
           {/* Top Section: Logo + Columns */}
@@ -165,10 +219,14 @@ export default function Layout() {
                       <Link to="/products/floats">Floats</Link>
                     </li>
                     <li>
-                      <Link to="/products/Level-instruments-and-Flappers">Level instruments and Flappers</Link>
+                      <Link to="/products/Level-instruments-and-Flappers">
+                        Level instruments and Flappers
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>
+                      <Link to="/products/Valves-and-Fittings">
+                        Valves and Fittings
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -188,7 +246,7 @@ export default function Layout() {
                   <br />
                   Saki Vihar Rd, opp. Ansa, Andheri East,
                   <br />
-                  Mumbai, Maharashtra 400072, Indiax
+                  Mumbai, Maharashtra 400072, India
                 </p>
               </div>
             </div>

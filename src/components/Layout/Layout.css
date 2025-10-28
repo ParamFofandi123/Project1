@@ -1,19 +1,23 @@
-button{
+button {
   transition: none;
   border-radius: 0px;
   outline: none;
 }
-button:focus{
+
+button:focus {
   outline: none;
 }
+
 .container {
-  max-width: 1200px;   /* adjust as you like */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
+
+/* Top Strip */
 .top-strip {
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,21 +26,20 @@ button:focus{
   text-align: center;
   padding: 8px 10px;
   font-size: 14px;
-  z-index: 1100; /* higher than navbar */
+  z-index: 1100;
 }
-
 
 .contact-info {
   display: flex;
-  align-items: center;   /* Vertically center icon & text */
-  justify-content: center; /* Center the whole group horizontally */
-  gap: 30px;            /* Space between email and phone */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .contact-item {
   display: flex;
-  align-items: center;  /* Align icon and text in each block */
-  gap: 8px;            /* Space between icon and text */
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
   color: #ffffff;
 }
@@ -47,13 +50,15 @@ button:focus{
   object-fit: contain;
   filter: invert();
 }
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 32px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1200px;  /* matches container width */
+  max-width: 1200px;
   height: 120px;
   background-color: #dadada;
   color: white;
@@ -61,18 +66,17 @@ button:focus{
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-    transition: all 0.6s ease;   /* Smooth animation */
+  transition: all 0.6s ease;
   z-index: 1000;
   box-sizing: border-box;
-  /* border-radius: 0 0 10px 10px; optional: gives a nice rounded bottom */
-}/* Logo container */
+}
+
 .logo-container {
   display: flex;
   align-items: center;
-  padding-left: 80px;   /* ✅ pushes logo slightly to the right */
+  padding-left: 80px;
 }
 
-/* Logo image */
 .site-logo {
   height: 100px;
   width: auto;
@@ -80,33 +84,60 @@ button:focus{
   object-fit: contain;
   cursor: pointer;
   display: block;
-  transition :all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .navbar.scrolled {
-  top:0;
-  height: 80px;               /* Smaller height */
-  background-color: #c8c8c8;  /* optional: slight color change */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  top: 0;
+  height: 80px;
+  background-color: #c8c8c8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .navbar.scrolled .site-logo {
-  height: 70px;              /* Shrink the logo too */
+  height: 70px;
 }
 
-/* Page content (everything below navbar) */
+/* Hamburger Menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Page content */
 .content {
-  /* padding-top: 120px; Match navbar height */
   min-height: 80vh;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Banner */
 .page-banner {
-  margin-top: 70px;      /* ensures banner starts right under navbar */
+  margin-top: 70px;
   background: url('/path-to-banner.jpg') center/cover no-repeat;
-  height: 250px;         /* adjust size */
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,11 +145,11 @@ button:focus{
   font-size: 2rem;
 }
 
-
 .logo {
   margin: 0;
 }
 
+/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -131,7 +162,8 @@ button:focus{
   transition: color 0.3s;
 }
 
-.nav-links a, .dropbtn {
+.nav-links a,
+.dropbtn {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
@@ -139,7 +171,6 @@ button:focus{
   border: none;
   font-size: 1rem;
   padding: 0em 0em;
-
 }
 
 .dropdown {
@@ -148,7 +179,6 @@ button:focus{
   transition: 3.5s ease-in;
 }
 
-
 .dropdown-content {
   position: absolute;
   top: 2.5rem;
@@ -156,13 +186,10 @@ button:focus{
   background: #dadada;
   list-style: none;
   padding: 0.5rem 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  /* border-radius: 6px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 220px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
-  
-  
 }
 
 .dropdown-content li {
@@ -179,25 +206,16 @@ button:focus{
   background: #f0f0f0;
 }
 
-
 .nav-links a:hover {
   color: #00bcd4;
 }
 
-/* Content section (pushes content below navbar) */
-.content {
-   /* padding: 80px 20px 80px; top = navbar height, bottom = footer space */
-  min-height: 80vh;
-  text-align: center;
-  box-sizing: border-box;
-}
-
+/* Footer */
 .footer .container {
   max-width: none;
   padding: 0;
   margin: 0;
 }
-
 
 .footer {
   width: 100%;
@@ -209,8 +227,8 @@ button:focus{
 }
 
 .full-width-footer {
-  width: 100vw;              /* full viewport width */
-  margin-left: calc(50% - 50vw);  /* breaks out of any centered parent */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   background-color: #d0cdcd;
   color: #040404;
   padding: 40px 60px;
@@ -218,12 +236,11 @@ button:focus{
 }
 
 .footer-inner {
-  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 0 60px;
   box-sizing: border-box;
 }
-/* Top part: logo + columns */
+
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -233,14 +250,12 @@ button:focus{
   gap: 40px;
 }
 
-/* Logo section */
 .footer-logo img {
   width: 150px;
   height: auto;
   display: block;
 }
 
-/* Columns */
 .footer-columns {
   display: flex;
   gap: 60px;
@@ -258,21 +273,20 @@ button:focus{
 }
 
 .footer-products ul {
-  list-style: none;   /* removes bullet points */
-  padding: 0;        /* removes default padding */
-  margin: 0;         /* removes default margin */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-products li {
-  margin-bottom: 8px; /* optional spacing between links */
+  margin-bottom: 8px;
 }
 
 .footer-products a {
-  text-decoration: none;  /* removes underline */
-  color: inherit;         /* uses the parent text color */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Social section */
 .footer-social {
   text-align: center;
 }
@@ -290,7 +304,6 @@ button:focus{
   cursor: pointer;
 }
 
-/* Bottom nav */
 .footer-bottom {
   border-top: 1px solid #ddd;
   padding-top: 15px;
@@ -310,26 +323,338 @@ button:focus{
   font-size: 14px;
 }
 
-
-.icons{
+.icons {
   max-width: 30px;
   max-height: 30px;
   filter: invert(100%);
 }
 
+/* ============================================
+   RESPONSIVE MOBILE STYLES
+   ============================================ */
+
+/* Tablet and smaller (768px and below) */
 @media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Top Strip */
+  .top-strip {
+    font-size: 11px;
+    padding: 6px 8px;
+    position: fixed;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-item {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .contact-item img {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Navbar with Hamburger */
+  .navbar {
+    top: 45px;
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logo-container {
+    padding-left: 0;
+  }
+
+  .site-logo {
+    height: 55px;
+    max-width: 130px;
+  }
+
+  .navbar.scrolled {
+    height: 60px;
+    top: 0;
+  }
+
+  .navbar.scrolled .site-logo {
+    height: 45px;
+  }
+
+  /* Show Hamburger Menu */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide and transform nav-links into mobile menu */
+  .nav-links {
+    position: fixed;
+    top: 115px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 115px);
+    background-color: #dadada;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #c0c0c0;
+  }
+
+  .nav-links a,
+  .dropbtn {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  /* Dropdown in mobile menu */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: #c8c8c8;
+    padding: 0;
+    min-width: auto;
+    margin-top: 10px;
+  }
+
+  .dropdown-content li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #b0b0b0;
+  }
+
+  .dropdown-content li:last-child {
+    border-bottom: none;
+  }
+
+  /* Banner */
+  .page-banner {
+    margin-top: 115px;
+    height: 180px;
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  /* Footer */
+  .footer,
+  .full-width-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-inner {
+    padding: 0 20px;
+  }
+
   .footer-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 25px;
+  }
+
+  .footer-logo img {
+    width: 120px;
   }
 
   .footer-columns {
     flex-direction: column;
     align-items: center;
-  } 
+    gap: 30px;
+  }
 
   .footer-col {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    min-width: auto;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-nav a {
+    font-size: 13px;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 10px;
+  }
+
+  /* Top Strip */
+  .top-strip {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .contact-item {
+    font-size: 10px;
+  }
+
+  .contact-item img {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Navbar */
+  .navbar {
+    top: 38px;
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .site-logo {
+    height: 45px;
+    max-width: 110px;
+  }
+
+  .navbar.scrolled {
+    height: 55px;
+  }
+
+  .navbar.scrolled .site-logo {
+    height: 40px;
+  }
+
+  /* Hamburger */
+  .hamburger span {
+    width: 25px;
+    height: 2.5px;
+  }
+
+  /* Mobile Menu */
+  .nav-links {
+    top: 98px;
+    width: 100%;
+    height: calc(100vh - 98px);
+  }
+
+  .nav-links li {
+    padding: 12px 15px;
+  }
+
+  .nav-links a,
+  .dropbtn {
+    font-size: 0.9rem;
+  }
+
+  /* Banner */
+  .page-banner {
+    margin-top: 98px;
+    height: 150px;
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  /* Footer */
+  .footer,
+  .full-width-footer {
+    padding: 20px 15px;
+  }
+
+  .footer-inner {
+    padding: 0 15px;
+  }
+
+  .footer-top {
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .footer-products li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .footer-icons {
+    gap: 12px;
+  }
+
+  .footer-icons .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-nav a {
+    font-size: 12px;
+  }
+
+  .icons {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+  .top-strip {
+    font-size: 9px;
+  }
+
+  .navbar {
+    height: 55px;
+  }
+
+  .site-logo {
+    height: 40px;
+    max-width: 90px;
+  }
+
+  .page-banner {
+    font-size: 1rem;
+    height: 120px;
+  }
+
+  .footer-logo img {
+    width: 80px;
+  }
+
+  .nav-links {
+    top: 93px;
   }
 }
