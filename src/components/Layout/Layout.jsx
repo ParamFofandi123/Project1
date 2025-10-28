@@ -103,10 +103,10 @@ export default function Layout() {
   {open && (
     <ul className={`dropdown-content ${open ? "open" : ""}`}>
       <li>
-        <Link to="/products/floats">Flow</Link>
+        <Link to="/products/floats">Floats</Link>
       </li>
       <li>
-        <Link to="/products/Level-and-Flappers">Level & Flappers</Link>
+        <Link to="/products/Level-instruments-and-Flappers">Level instruments and Flappers</Link>
       </li>
       <li>
         <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>
@@ -165,7 +165,7 @@ export default function Layout() {
                       <Link to="/products/floats">Floats</Link>
                     </li>
                     <li>
-                      <Link to="/products/Level-&-Flappers">Level & Flappers</Link>
+                      <Link to="/products/Level-instruments-and-Flappers">Level instruments and Flappers</Link>
                     </li>
                     <li>
                       <Link to="/products/Valves-and-Fittings">Valves and Fittings</Link>

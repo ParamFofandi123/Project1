@@ -5,6 +5,7 @@ import slide1 from "../../assets/slide1.jpg";
 import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpg";
 import slide4 from "../../assets/slide4.jpg";
+import MagneticFloat from "../../assets/products/MAGNETIC_FLOAT.jpg";
 
 export default function Home() {
   const images = [slide1, slide2, slide3, slide4];
@@ -22,7 +23,10 @@ export default function Home() {
       title: "Creative Solutions",
       subtitle: "Driven by technology and passion",
     },
-    { title: "Let's Build Together", subtitle: "Partner with us for success" },
+    {
+      title: "Let's Build Together",
+      subtitle: "Your partner in precision and progress",
+    },
   ];
 
   // Start at index 1 (because index 0 will be the "clone" of last slide)
@@ -150,6 +154,24 @@ export default function Home() {
       </div>
       <div className="our-products">
         <h1>OUR PRODUCTS</h1>
+        <div className="content-box">
+        <div className="image-box">
+          <img src={MagneticFloat} />
+        </div>
+        <div>
+          
+          <p className="paragraph">
+            <h3>MAGNETIC FLOAT MANUFACTURING</h3>
+            We manufacture high-quality Magnetic Floats designed for precise and
+            reliable liquid level sensing. Made from premium SS 304 / SS 316 or
+            Titanium, HC 276 & Alloy, our floats feature hermetically sealed
+            construction with embedded magnets for accuracy activation. Each
+            unit undergoes strict leak, buoyancy, and magnetic sensitivity tests
+            to ensure long-term performance in water, chemical, and industrial
+            applications.
+          </p>
+        </div>
+        </div>
         <div className="product-row">
           <div className="product-box">
             <img />

@@ -25,7 +25,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/floats" element={<Floats />} />
-            <Route path="/products/Level-&-Flappers" element={<Level_instruments_and_flappers />} />
+            <Route path="/products/Level-instruments-and-Flappers" element={<Level_instruments_and_flappers />} />
             <Route path="/products/Valves-and-Fittings" element={<Valves_and_Fittings />} />
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />

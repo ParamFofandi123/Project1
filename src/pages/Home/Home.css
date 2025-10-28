@@ -105,7 +105,7 @@
 
 .mission-text .paragraph {
   font-size: 22px;
-  max-width: 70%;
+  /* max-width: 70%; */
   margin: 0 auto;
   padding: 0 20px;
   line-height: 1.6;
@@ -113,7 +113,27 @@
 .mission-text h1{
   color: rgb(1, 1, 102);
 }
-
+.content-box{
+  display: flex;
+}
+.our-products h1{
+   color: rgb(1, 1, 102);
+} 
+.content-box h3{
+  text-align: left;
+}
+.content-box .paragraph{
+    font-size: 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  text-align: left;
+  line-height: 1.2;
+}
+.image-box img{
+  width: 300px;
+  height: auto;
+}
 /* Text fade-up animation for small screens */
 @keyframes fadeInUp {
   from {
