@@ -5,7 +5,7 @@ import Card1 from "../../../assets/Visiting_Card_01.jpg";
 import Card2 from "../../../assets/Visiting_Card_02.jpg";
 
 export default function Banner() {
-  const ref = useRef(null);
+    const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -21,23 +21,21 @@ export default function Banner() {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
-
   return (
     <div className="banner">
       <div className="banner-content">
-        {/* Image section */}
-        <div className="images">
-          <img
+        {/* Two YouTube videos */}
+        <div className="videos">
+         <img
             src={Card1}
             alt="Company Card"
             className="responsive-image"
           />
-          {/* You can uncomment below if you want the 2nd image */}
-          {/* <img src={Card2} alt="Company Card 2" className="responsive-image" /> */}
+
+  
         </div>
 
-        {/* Vision text */}
-        <div ref={ref} className={`vision-text ${visible ? "animate" : ""}`}>
+        <div ref={ref} className={`vision-text ${visible ? "animate" : ""}`} >
           <h2>Our Vision</h2>
           <p className="paragraph">
             Our vision is to become a trusted global leader in the field of

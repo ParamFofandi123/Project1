@@ -2,7 +2,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   background: linear-gradient(135deg, #0f065e, #48437a);
-  padding: 40px 15px;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -12,9 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
 }
+
+/* Videos */
 .images {
   display: flex;
   flex-direction: column;
@@ -31,15 +33,23 @@
   border-radius: 8px;
   object-fit: contain;
 }
+/* Pamphlet */
+.pamphlet img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
 
-
-/* Vision text box */
+/* Vision text */
 .vision-text {
   text-align: left;
+  padding: 25px;
   background-color: aliceblue;
   max-width: 500px;
-  padding: 20px 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
@@ -50,15 +60,91 @@
   transform: translateY(0);
 }
 
+.vision-text .paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 .vision-text h2 {
   color: rgb(1, 1, 102);
   margin-bottom: 10px;
 }
 
-.vision-text .paragraph {
-  font-size: 16px;
-  line-height: 1.6;
+/* Tablet */
+@media (max-width: 1024px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pamphlet img {
+    max-width: 320px;
+  }
+
+  .vision-text {
+    max-width: 85%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .vision-text h2 {
+    font-size: 22px;
+  }
 }
+
+/* Large mobile */
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 15px;
+  }
+
+  .pamphlet img {
+    max-width: 280px;
+  }
+
+  .vision-text {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .vision-text .paragraph {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .banner {
+    padding: 25px 10px;
+  }
+
+  .banner-content {
+    gap: 25px;
+  }
+
+  .pamphlet img {
+    width: 120px;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .vision-text {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .vision-text .paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .vision-text h2 {
+    font-size: 18px;
+  }
+}
+
+/* Animation */
 
 /* Tablet */
 @media (max-width: 1024px) {
