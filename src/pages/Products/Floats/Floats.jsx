@@ -7,7 +7,7 @@ export default function Floats() {
    const floatProducts = products.filter((p) => p.category === "Floats");
   return (
     <div>
-      <Breadcrums title="Products" image="/images/banner.jpg" />
+      <Breadcrums title="Products" image="/images/product-img1.jpg" />
       <div className="products-container">
         {floatProducts.map((products) => (
           <div key={products.id} className="product-card">

@@ -7,7 +7,7 @@ export default function Level_instruments_and_flappers(){
    const floatProducts = products.filter((p) => p.category === "Level Instruments & Flappers");
   return (
     <div>
-      <Breadcrums title="Level Intstuments and Flappers" image="/images/banner.jpg" />
+      <Breadcrums title="Level Intstuments and Flappers" image="/images/product-img2.jpg" />
       <div className="products-container">
         {floatProducts.map((products) => (
           <div key={products.id} className="product-card">

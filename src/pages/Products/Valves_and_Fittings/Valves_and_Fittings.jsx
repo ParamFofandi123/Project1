@@ -7,7 +7,7 @@ export default function Valves_and_Fittings() {
    const floatProducts = products.filter((p) => p.category === "Valves & Fittings");
   return (
     <div>
-      <Breadcrums title="Level Intstuments and Flappers" image="/images/banner.jpg" />
+      <Breadcrums title="Level Intstuments and Flappers" image="/images/product-img3.jpg" />
       <div className="products-container">
         {floatProducts.map((products) => (
           <div key={products.id} className="product-card">

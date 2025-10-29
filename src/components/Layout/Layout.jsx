@@ -206,8 +206,7 @@ export default function Layout() {
               <div className="footer-col">
                 <h3>About Us</h3>
                 <p>
-                  We provide innovative solutions tailored <br />
-                  to your business needs.
+                Your Partner in Precision and Progress.
                 </p>
               </div>
 

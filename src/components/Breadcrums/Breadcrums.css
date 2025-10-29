@@ -18,16 +18,23 @@
   font-size: 2.5rem;
   padding-top: 100px;
   margin: 0;
+  text-shadow: 1px 1px 2px gray;
+   animation: fadeIn 0.8s ease-in;
 }
 
 .Breadcrums-nav {
   margin-top: 10px;
   font-size: 1rem;
+  text-shadow: 1px 1px 2px gray;
+   animation: fadeIn 0.8s ease-in;
 }
 
 .Breadcrums-nav a {
   color: white;
   text-decoration: none;
+   animation: fadeIn 0.8s ease-in;
+  text-shadow: 1px 1px 2px gray;
+
 }
 
 .Breadcrums-nav a:hover {
@@ -46,4 +53,12 @@
 
 .breadcrumb a:hover {
   text-decoration: underline;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
