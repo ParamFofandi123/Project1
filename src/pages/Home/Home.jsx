@@ -173,12 +173,7 @@ export default function Home() {
           </p>
         </div>
         </div>
-        <div className="product-row">
-          <div className="product-box">
-            <img />
-            <p className="paragraph"></p>
-          </div>
-        </div>
+      
       </div>
       <ProductSlider/>
       <Banner />
