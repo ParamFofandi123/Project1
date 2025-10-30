@@ -6,13 +6,14 @@ import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpg";
 import slide4 from "../../assets/slide4.jpg";
 import MagneticFloat from "../../assets/products/MAGNETIC_FLOAT.jpg";
+import ProductSlider from "../../components/Product_slider/Product_slider/"
 
 export default function Home() {
   const images = [slide1, slide2, slide3, slide4];
 
   const slideTexts = [
     {
-      title: "Welcome to Our Website",
+      title: "Welcome to Winova Solutions",
       subtitle: "Delivering quality and innovation",
     },
     {
@@ -179,6 +180,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ProductSlider/>
       <Banner />
     </div>
   );

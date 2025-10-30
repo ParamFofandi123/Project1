@@ -163,11 +163,11 @@ export default function Layout() {
             )}
           </li>
 
-          <li>
+          {/* <li>
             <Link to="/career" onClick={closeMobileMenu}>
               Career
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/services" onClick={closeMobileMenu}>
               Services
@@ -275,7 +275,7 @@ export default function Layout() {
             <nav className="footer-nav">
               <Link to="/">Home</Link>
               <Link to="/products">Products</Link>
-              <Link to="/career">Career</Link>
+              {/* <Link to="/career">Career</Link> */}
               <Link to="/services">Services</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>

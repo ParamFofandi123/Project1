@@ -1,7 +1,7 @@
 .page-Breadcrums {
-  width: 100vw;   
-  height: 400px;                       /* full viewport width */
-  margin-left: calc(50% - 50vw);         /* cancel out parent padding */
+  width: 100vw;
+  height: 400px; /* full viewport width */
+  margin-left: calc(50% - 50vw); /* cancel out parent padding */
   position: relative;
   text-align: center;
   color: white;
@@ -10,7 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 120px 20px 40px;              /* top pushes below navbar */
+  padding: 120px 20px 40px; /* top pushes below navbar */
   box-sizing: border-box;
 }
 
@@ -19,22 +19,21 @@
   padding-top: 100px;
   margin: 0;
   text-shadow: 1px 1px 2px gray;
-   animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .Breadcrums-nav {
   margin-top: 10px;
   font-size: 1rem;
   text-shadow: 1px 1px 2px gray;
-   animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .Breadcrums-nav a {
   color: white;
   text-decoration: none;
-   animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 0.8s ease-in;
   text-shadow: 1px 1px 2px gray;
-
 }
 
 .Breadcrums-nav a:hover {

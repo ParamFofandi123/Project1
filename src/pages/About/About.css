@@ -1,0 +1,156 @@
+.about-us {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ---- Content Container ---- */
+.content-box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* ---- Image Section ---- */
+.image-box1 img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Text Section ---- */
+.title1 {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.title1 h2 {
+  color: #010166;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.title1 ul {
+  list-style: none; /* remove bullets */
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.title1 ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+}
+
+/* custom bullet */
+.title1 ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0f3bd3;
+  font-weight: bold;
+}
+
+/* paragraph */
+.paragraph1 {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 15px;
+}
+
+/* ---- Product Row ---- */
+.product-row {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-box {
+  width: 250px;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-box .paragraph {
+  font-size: 15px;
+  color: #333;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 992px) {
+  .content-box1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title1 {
+    text-align: center;
+  }
+
+  .title1 ul li {
+    padding-left: 0;
+  }
+
+  .title1 ul li::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us {
+    padding: 40px 15px;
+  }
+
+  .title1 h2 {
+    font-size: 24px;
+  }
+
+  .title1 ul li,
+  .paragraph1 {
+    font-size: 14px;
+  }
+
+  .image-box1 img {
+    max-width: 300px;
+  }
+
+  .product-box {
+    width: 200px;
+  }
+}

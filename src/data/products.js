@@ -35,7 +35,8 @@ import BrassFittings from "../assets/products/Brass_Fittings.jpg";
 import CustomizeFittings from "../assets/products/Customize_Fittings.jpg";
 import SyphoneQType from "../assets/products/Syphone_Q_Type.jpg";
 import AirFilterRegulator from "../assets/products/Air_Filter_Regulator.jpg";
-import SightGlass from "../assets/products/Sight_Glass.jpg";
+import SightGlass1 from "../assets/products/Sight_Glass.jpg";
+import SightGlass2 from "../assets/products/Sight_Glass2.jpg";
 
 // Products Array
  export const products = [
@@ -271,7 +272,13 @@ import SightGlass from "../assets/products/Sight_Glass.jpg";
   {
     id: 38,
     name: "Sight Glass",
-    image: SightGlass,
+    image: SightGlass1,
+    category: "Valves & Fittings"
+  },
+    {
+    id: 39,
+    name: "Sight Glass",
+    image: SightGlass2,
     category: "Valves & Fittings"
   }
 ];
