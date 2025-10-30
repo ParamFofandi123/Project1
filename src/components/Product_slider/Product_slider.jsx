@@ -1,49 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { products } from "../../data/products";
-import "./Product_slider.css";
-import { Link } from "react-router-dom";
+import "./Product_slider.css"; // ← your CSS file
 
-export default function ProductSlider() {
-  const [randomProducts, setRandomProducts] = useState([]);
+import products from "../../data/products"; // adjust path as needed
 
-  useEffect(() => {
-    // Shuffle and pick 6 random products
-    const shuffled = [...products].sort(() => 0.5 - Math.random());
-    setRandomProducts(shuffled.slice(0, 6));
-  }, []);
-
+const ProductSlider = () => {
   return (
     <div className="product-slider">
       <h2 className="slider-title">Featured Products</h2>
+
       <Swiper
-        modules={[Autoplay, Pagination]}
-        spaceBetween={30}
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={20}
         slidesPerView={3}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         breakpoints={{
-          0: { slidesPerView: 1 },
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          0: { slidesPerView: 1 },        // Mobile
+          600: { slidesPerView: 2 },      // Tablet
+          1024: { slidesPerView: 3 },     // Desktop
         }}
       >
-        {randomProducts.map((product) => (
-          <SwiperSlide key={product.id}>
-            <Link to={"/products"}>
-            <div className="product-card">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>{product.category}</p>
-            </div>
-            </Link>
-          </SwiperSlide>
-        ))}
+        {products
+          .sort(() => Math.random() - 0.5) // randomly shuffle
+          .slice(0, 6)                     // pick 6 random
+          .map((product, index) => (
+            <SwiperSlide key={index}>
+              <div className="product-card">
+                <img src={product.image} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p>{product.category}</p>
+              </div>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );
-}
+};
+
+export default ProductSlider;

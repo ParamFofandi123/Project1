@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       
       </div>
-      <ProductSlider/>
+      {/* <ProductSlider/> */}
       <Banner />
     </div>
   );
