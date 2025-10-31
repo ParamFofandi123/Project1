@@ -1,25 +1,52 @@
-/* Scope all Swiper and product card styles */
+/* 🌐 Slider Section */
 .product-slider {
   width: 100%;
-  max-width: 1200px;
-  margin: 50px auto;
-  text-align: center;
+  max-width: 1400px; /* large desktop */
+  margin: 60px auto;
   padding: 0 20px;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .product-slider .slider-title {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
   color: #0f065e;
+  font-weight: 600;
 }
 
-/* Card styling */
+/* Wrapper for arrows + Swiper */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Prevent overflow issues */
+.swiper-wrapper-container {
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 🎴 Product Card */
 .product-slider .product-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
   transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-slider .product-card:hover {
@@ -34,7 +61,6 @@
   margin-bottom: 10px;
 }
 
-/* 👇 Scoped paragraph and title styles — won’t affect your homepage */
 .product-slider .product-card h3 {
   font-size: 1.1rem;
   margin: 8px 0 4px;
@@ -47,22 +73,146 @@
   margin: 0;
 }
 
-/* Swiper pagination customization */
+/* Pagination */
 .product-slider .swiper-pagination-bullet {
   background: #0f065e;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .product-slider {
-    padding: 0 10px;
-  }
+/* Arrows */
+.product-slider .swiper-button-next,
+.product-slider .swiper-button-prev {
+  color: #0f065e;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 52px;
+  height: 52px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: static;
+  z-index: 5;
+}
 
+.product-slider .swiper-button-next::after,
+.product-slider .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-slider .swiper-button-next:hover,
+.product-slider .swiper-button-prev:hover {
+  background: #0f065e;
+  color: #fff;
+}
+.product-slider .swiper-pagination {
+  position: relative;
+  margin-top: 20px; /* move down */
+}
+
+
+
+/* ===============================
+   📱 Responsive Styles
+   =============================== */
+
+/* 🖥️ Large Screens (1200px–1400px) */
+@media (max-width: 1400px) {
+  .product-slider {
+    max-width: 1200px;
+  }
+  .slider-container {
+    max-width: 1100px;
+  }
+}
+
+/* 💻 Laptops (1024px–1199px) */
+@media (max-width: 1200px) {
+  .product-slider {
+    max-width: 1000px;
+  }
+  .slider-container {
+    max-width: 950px;
+  }
+  .product-slider .slider-title {
+    font-size: 1.6rem;
+  }
+  .product-slider .product-card img {
+    height: 160px;
+  }
+}
+
+/* 📱 Tablets (769px–1023px) */
+@media (max-width: 1024px) {
+  .product-slider {
+    max-width: 800px;
+  }
+  .slider-container {
+    max-width: 780px;
+  }
   .product-slider .slider-title {
     font-size: 1.5rem;
   }
+  .product-slider .product-card img {
+    height: 150px;
+  }
+}
 
+/* 📲 Mobile Landscape / Small Tablets (481px–768px) */
+@media (max-width: 768px) {
+  .product-slider {
+    max-width: 600px;
+    padding: 0 15px;
+  }
+  .slider-container {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 580px;
+  }
+  .product-slider .swiper-button-next,
+  .product-slider .swiper-button-prev {
+    display: none; /* Hide arrows on mobile */
+  }
+  .product-slider .slider-title {
+    font-size: 1.4rem;
+  }
   .product-slider .product-card img {
     height: 140px;
+  }
+}
+
+/* 📞 Phones (361px–480px) */
+@media (max-width: 480px) {
+  .product-slider {
+    max-width: 270px;
+    padding: 0 10px;
+  }
+  .slider-container {
+    max-width: 380px;
+  }
+  .product-slider .slider-title {
+    font-size: 1.3rem;
+  }
+  .product-slider .product-card {
+    padding: 10px;
+  }
+  .product-slider .product-card img {
+    height: 120px;
+  }
+}
+
+/* 🪶 Small Phones (<=360px) */
+@media (max-width: 360px) {
+  .product-slider {
+    max-width: 270px;
+    padding: 0 8px;
+  }
+  .slider-container {
+    max-width: 300px;
+  }
+  .product-slider .slider-title {
+    font-size: 1.1rem;
+  }
+  .product-slider .product-card img {
+    height: 100px;
   }
 }

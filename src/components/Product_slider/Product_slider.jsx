@@ -4,42 +4,54 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./Product_slider.css"; // ← your CSS file
+import "./Product_slider.css";
 
-import products from "../../data/products"; // adjust path as needed
+import products from "../../data/products"; // adjust path if needed
 
 const ProductSlider = () => {
   return (
-    <div className="product-slider">
+    <section className="product-slider">
       <h2 className="slider-title">Featured Products</h2>
 
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={3}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop={true}
-        breakpoints={{
-          0: { slidesPerView: 1 },        // Mobile
-          600: { slidesPerView: 2 },      // Tablet
-          1024: { slidesPerView: 3 },     // Desktop
-        }}
-      >
-        {products
-          .sort(() => Math.random() - 0.5) // randomly shuffle
-          .slice(0, 6)                     // pick 6 random
-          .map((product, index) => (
-            <SwiperSlide key={index}>
-              <div className="product-card">
-                <img src={product.image} alt={product.name} />
-                <h3>{product.name}</h3>
-                <p>{product.category}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-    </div>
+      <div className="slider-container">
+        {/* Outside arrows */}
+        <button className="swiper-button-prev" aria-label="Previous"></button>
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            600: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="swiper-wrapper-container"
+        >
+          {products
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 6)
+            .map((product, index) => (
+              <SwiperSlide key={index}>
+                <div className="product-card">
+                  <img src={product.image} alt={product.name} />
+                  <h3>{product.name}</h3>
+                  <p>{product.category}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+
+        <button className="swiper-button-next" aria-label="Next"></button>
+      </div>
+    </section>
   );
 };
 
