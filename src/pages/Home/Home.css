@@ -1,4 +1,4 @@
-/* Keep everything horizontally centered */
+
 *,
 *::before,
 *::after {
@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-/* Slideshow */
+
 .slideshow {
   position: relative;
   width: 100vw;
@@ -28,7 +28,7 @@
   margin-top: 0;
 }
 
-/* Track for sliding animation */
+
 .slider-track {
   display: flex;
   height: 100%;
@@ -36,7 +36,7 @@
   will-change: transform;
 }
 
-/* Each slide */
+
 .slide {
   min-width: 100%;
   height: 100%;
@@ -46,7 +46,7 @@
   position: relative;
 }
 
-/* Text overlay */
+
 .slide-text {
   position: absolute;
   top: 50%;
@@ -75,7 +75,7 @@
   margin: 0 auto;
 }
 
-/* Controls */
+
 .prev,
 .next {
   position: absolute;
@@ -106,7 +106,7 @@
   right: 15px;
 }
 
-/* Mission Text */
+
 .mission-text {
   text-align: center;
   padding: 20px;
@@ -123,7 +123,7 @@
   color: rgb(1, 1, 102);
 }
 
-/* Content Box */
+
 .content-box {
   display: flex;
 }
@@ -149,7 +149,7 @@
   height: auto;
 }
 
-/* Text fade-up animation */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -161,18 +161,14 @@
   }
 }
 
-/* ============================================
-   RESPONSIVE MOBILE STYLES
-   ============================================ */
 
-/* Tablet and smaller (768px and below) */
 @media (max-width: 768px) {
-  /* Slideshow */
+
   .slideshow {
     height: 450px;
   }
 
-  /* Slide Text */
+
   .slide-text h1 {
     font-size: 2rem;
     margin-bottom: 0.3rem;
@@ -184,7 +180,7 @@
     max-width: 90%;
   }
 
-  /* Controls - Make touch-friendly */
+ 
   .prev,
   .next {
     padding: 12px;
@@ -204,7 +200,7 @@
     right: 10px;
   }
 
-  /* Mission Text */
+ 
   .mission-text {
     padding: 15px;
   }
@@ -219,7 +215,7 @@
     line-height: 1.5;
   }
 
-  /* Content Box - Stack vertically */
+
   .content-box {
     flex-direction: column;
     align-items: center;
@@ -239,26 +235,25 @@
     line-height: 1.4;
   }
 
-  /* Image Box */
+
   .image-box img {
     width: 250px;
     max-width: 90%;
   }
 
-  /* Our Products */
+
   .our-products h1 {
     font-size: 1.8rem;
   }
 }
 
-/* Mobile phones (480px and below) */
+
 @media (max-width: 480px) {
-  /* Slideshow */
+
   .slideshow {
     height: 350px;
   }
 
-  /* Slide Text */
   .slide-text h1 {
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
@@ -270,7 +265,7 @@
     max-width: 95%;
   }
 
-  /* Controls */
+
   .prev,
   .next {
     padding: 10px;
@@ -288,7 +283,7 @@
     right: 8px;
   }
 
-  /* Mission Text */
+
   .mission-text {
     padding: 12px;
   }
@@ -304,7 +299,6 @@
     line-height: 1.4;
   }
 
-  /* Content Box */
   .content-box {
     gap: 15px;
     padding: 10px;
@@ -320,26 +314,24 @@
     line-height: 1.3;
   }
 
-  /* Image Box */
+
   .image-box img {
     width: 200px;
     max-width: 85%;
   }
 
-  /* Our Products */
   .our-products h1 {
     font-size: 1.5rem;
   }
 }
 
-/* Extra small devices (360px and below) */
+
 @media (max-width: 360px) {
-  /* Slideshow */
+
   .slideshow {
     height: 280px;
   }
 
-  /* Slide Text */
   .slide-text h1 {
     font-size: 1.3rem;
   }
@@ -349,7 +341,7 @@
     padding: 0 10px;
   }
 
-  /* Controls */
+
   .prev,
   .next {
     width: 36px;
@@ -366,7 +358,7 @@
     right: 5px;
   }
 
-  /* Mission Text */
+ 
   .mission-text h1 {
     font-size: 1.3rem;
   }
@@ -375,7 +367,7 @@
     font-size: 14px;
   }
 
-  /* Content Box */
+  
   .content-box h3 {
     font-size: 1rem;
   }
@@ -384,18 +376,18 @@
     font-size: 14px;
   }
 
-  /* Image Box */
+
   .image-box img {
     width: 180px;
   }
 
-  /* Our Products */
+
   .our-products h1 {
     font-size: 1.3rem;
   }
 }
 
-/* Landscape orientation on mobile */
+
 @media (max-width: 768px) and (orientation: landscape) {
   .slideshow {
     height: 300px;

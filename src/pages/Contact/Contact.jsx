@@ -42,7 +42,7 @@ export default function Contact() {
 
   return (
     <div>
-      <Breadcrums title="Contact" image="/images/banner.jpg" />
+      <Breadcrums title="Contact" image="/images/banner5.jpg" />
       <div className="contact-section">
         <h2>Enquiry Form</h2>
         {submitted && (

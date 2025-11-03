@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Banner.css";
-import Pamphlate from "../../../assets/DWYER.jpg";
+
 import Card1 from "../../../assets/Visiting_Card_01.jpg";
 import Card2 from "../../../assets/Visiting_Card_02.jpg";
 
@@ -24,7 +24,7 @@ export default function Banner() {
   return (
     <div className="banner">
       <div className="banner-content">
-        {/* Two YouTube videos */}
+
         <div className="videos">
          <img
             src={Card1}

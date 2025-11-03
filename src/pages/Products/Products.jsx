@@ -6,7 +6,7 @@ import { products } from "../../data/products";
 export default function Products() {
   return (
     <div>
-      <Breadcrums title="Products" image="/images/banner.jpg" />
+      <Breadcrums title="Products" image="/images/banner3.jpg" />
       <div className="products-container">
         {products.map((products) => (
           <div key={products.id} className="product-card">

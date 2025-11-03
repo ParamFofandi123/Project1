@@ -30,7 +30,6 @@ export default function Home() {
     },
   ];
 
-  // Start at index 1 (because index 0 will be the "clone" of last slide)
   const [currentIndex, setCurrentIndex] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [animateText, setAnimateText] = useState(true);
@@ -52,17 +51,16 @@ export default function Home() {
     setTimeout(() => setAnimateText(true), 50);
   };
 
-  // Handle the "jump" without animation
   useEffect(() => {
     if (currentIndex === totalSlides + 1) {
-      // jumped past the last real slide → go to first real slide
+    
       setTimeout(() => {
         setTransitionEnabled(false);
         setCurrentIndex(1);
-      }, 300); // matches CSS transition duration
+      }, 300); 
     }
     if (currentIndex === 0) {
-      // jumped before the first real slide → go to last real slide
+      
       setTimeout(() => {
         setTransitionEnabled(false);
         setCurrentIndex(totalSlides);
@@ -70,7 +68,7 @@ export default function Home() {
     }
   }, [currentIndex, totalSlides]);
 
-  // Re-enable transition after the jump
+  
   useEffect(() => {
     if (!transitionEnabled) {
       setTimeout(() => setTransitionEnabled(true), 50);
@@ -79,7 +77,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {/* Slideshow */}
+      
       <div className="slideshow">
         <div
           className="slider-track"
@@ -90,7 +88,7 @@ export default function Home() {
               : "none",
           }}
         >
-          {/* Clone of last slide at beginning */}
+          
           <div
             className="slide"
             style={{ backgroundImage: `url(${images[totalSlides - 1]})` }}
@@ -101,7 +99,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Real slides */}
+          
           {images.map((img, i) => (
             <div
               key={i}
@@ -119,7 +117,7 @@ export default function Home() {
             </div>
           ))}
 
-          {/* Clone of first slide at end */}
+          
           <div
             className="slide"
             style={{ backgroundImage: `url(${images[0]})` }}
@@ -131,7 +129,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Prev & Next buttons */}
+        
         <button className="prev" onClick={prevSlide}>
           ❮
         </button>
@@ -140,7 +138,7 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Mission Section */}
+      
       <div className="mission-text">
         <h1>MISSION</h1>
         <p className="paragraph">

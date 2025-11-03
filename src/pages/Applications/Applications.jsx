@@ -6,10 +6,10 @@ export default function Services() {
   return (
     <div>
       <Breadcrums 
-        title="Services" 
-        image="/images/banner.jpg" 
+        title="Applications" 
+        image="/images/banner2.jpg" 
       />
-      <p>Check out  our amazing Services...</p>
+      <p>Check out  applications of our products...</p>
     </div>
   );
 }

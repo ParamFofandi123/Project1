@@ -8,7 +8,7 @@ export default function About() {
     <div className="about-container">
       <Breadcrums title="About" image="/images/banner.jpg" />
       <div className="about-us">
-        {/* <h1>About Us</h1> */}
+ 
         <div className="content-box1">
           <div className="image-box1">
             <img src={img1} />

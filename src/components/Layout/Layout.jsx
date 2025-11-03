@@ -114,54 +114,53 @@ export default function Layout() {
           </li>
 
           {/* Products Dropdown */}
-          <li
-            className="dropdown"
-            ref={dropdownRef}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              to="/products"
-              className={`dropbtn ${open ? "active" : ""}`}
-              onClick={(e) => {
-                // On mobile, toggle dropdown; on desktop, navigate
-                if (window.innerWidth <= 768) {
-                  e.preventDefault();
-                  toggleDropdown();
-                } else {
-                  closeMobileMenu();
-                }
-              }}
-            >
-              Products ▾
-            </Link>
+<li
+  className={`dropdown ${open ? "open" : ""}`}   // 👈 added `open` class
+  ref={dropdownRef}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+  <Link
+    to="/products"
+    className={`dropbtn ${open ? "active" : ""}`}
+    onClick={(e) => {
+      // On mobile/tablet, toggle dropdown instead of navigating
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleDropdown();
+      } else {
+        closeMobileMenu();
+      }
+    }}
+  >
+    Products ▾
+  </Link>
 
-            {open && (
-              <ul className={`dropdown-content ${open ? "open" : ""}`}>
-                <li>
-                  <Link to="/products/floats" onClick={closeMobileMenu}>
-                    Floats
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products/Level-instruments-and-Flappers"
-                    onClick={closeMobileMenu}
-                  >
-                    Level instruments and Flappers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/products/Valves-and-Fittings"
-                    onClick={closeMobileMenu}
-                  >
-                    Valves and Fittings
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
+  <ul className={`dropdown-content ${open ? "open" : ""}`}> {/* 👈 always rendered, not conditional */}
+    <li>
+      <Link to="/products/floats" onClick={closeMobileMenu}>
+        Floats
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/products/Level-instruments-and-Flappers"
+        onClick={closeMobileMenu}
+      >
+        Level instruments and Flappers
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/products/Valves-and-Fittings"
+        onClick={closeMobileMenu}
+      >
+        Valves and Fittings
+      </Link>
+    </li>
+  </ul>
+</li>
+
 
           {/* <li>
             <Link to="/career" onClick={closeMobileMenu}>
@@ -169,8 +168,8 @@ export default function Layout() {
             </Link>
           </li> */}
           <li>
-            <Link to="/services" onClick={closeMobileMenu}>
-              Services
+            <Link to="/applications" onClick={closeMobileMenu}>
+              Applications
             </Link>
           </li>
           <li>
@@ -186,22 +185,21 @@ export default function Layout() {
         </ul>
       </nav>
 
-      {/* Page Content */}
+   
       <main className="content container">
         <Outlet />
       </main>
 
-      {/* Footer */}
+     
       <footer className="footer full-width-footer">
         <div className="footer-inner">
-          {/* Top Section: Logo + Columns */}
+     
           <div className="footer-top">
-            {/* Left Logo */}
+        
             <div className="footer-logo">
               <img src={SiteLogo} alt="Company Logo" />
             </div>
 
-            {/* Right Columns */}
             <div className="footer-columns">
               <div className="footer-col">
                 <h3>About Us</h3>
@@ -251,7 +249,6 @@ export default function Layout() {
             </div>
           </div>
 
-          {/* Social Icons */}
           <div className="footer-social">
             <h4>Follow Us</h4>
             <div className="footer-icons">
@@ -270,13 +267,12 @@ export default function Layout() {
             </div>
           </div>
 
-          {/* Bottom Navigation */}
           <div className="footer-bottom">
             <nav className="footer-nav">
               <Link to="/">Home</Link>
               <Link to="/products">Products</Link>
               {/* <Link to="/career">Career</Link> */}
-              <Link to="/services">Services</Link>
+              <Link to="/applications">Applications</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
             </nav>

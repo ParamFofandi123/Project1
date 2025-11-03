@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 
-/* Videos */
+
 .images {
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
   border-radius: 8px;
   object-fit: contain;
 }
-/* Pamphlet */
+
 .pamphlet img {
   width: 100%;
   max-width: 400px;
@@ -43,7 +43,7 @@
   object-fit: contain;
 }
 
-/* Vision text */
+
 .vision-text {
   text-align: left;
   padding: 25px;
@@ -70,7 +70,7 @@
   margin-bottom: 10px;
 }
 
-/* Tablet */
+
 @media (max-width: 1024px) {
   .banner-content {
     flex-direction: column;
@@ -93,7 +93,7 @@
   }
 }
 
-/* Large mobile */
+
 @media (max-width: 768px) {
   .banner {
     padding: 40px 15px;
@@ -113,7 +113,7 @@
   }
 }
 
-/* Small mobile */
+
 @media (max-width: 480px) {
   .banner {
     padding: 25px 10px;
@@ -144,9 +144,7 @@
   }
 }
 
-/* Animation */
 
-/* Tablet */
 @media (max-width: 1024px) {
   .banner-content {
     flex-direction: column;
@@ -159,7 +157,7 @@
   }
 }
 
-/* Large Mobile */
+
 @media (max-width: 768px) {
   .banner {
     padding: 30px 10px;
