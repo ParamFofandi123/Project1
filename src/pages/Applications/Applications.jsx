@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrums from "../../components/Breadcrums/Breadcrums";
-import "Applications.css"
+import "./Applications.css"
  
 export default function Services() {
   return (
@@ -9,7 +9,7 @@ export default function Services() {
         title="Applications" 
         image="/images/banner2.jpg" 
       />
-      <p>Check out  applications of our products...</p>
+      <p>Ccheck out  applications of our products...</p>
     </div>
   );
 }
