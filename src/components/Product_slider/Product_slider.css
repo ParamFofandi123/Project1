@@ -29,14 +29,14 @@
   margin: 0 auto;
 }
 
-/* Prevent overflow issues */
+
 .swiper-wrapper-container {
   width: 100%;
   flex: 1;
   min-width: 0;
 }
 
-/* 🎴 Product Card */
+
 .product-slider .product-card {
   background: #fff;
   border-radius: 12px;
@@ -73,12 +73,12 @@
   margin: 0;
 }
 
-/* Pagination */
+
 .product-slider .swiper-pagination-bullet {
   background: #0f065e;
 }
 
-/* Arrows */
+
 .product-slider .swiper-button-next,
 .product-slider .swiper-button-prev {
   color: #0f065e;
@@ -111,11 +111,6 @@
 
 
 
-/* ===============================
-   📱 Responsive Styles
-   =============================== */
-
-/* 🖥️ Large Screens (1200px–1400px) */
 @media (max-width: 1400px) {
   .product-slider {
     max-width: 1200px;
@@ -125,7 +120,6 @@
   }
 }
 
-/* 💻 Laptops (1024px–1199px) */
 @media (max-width: 1200px) {
   .product-slider {
     max-width: 1000px;
@@ -141,7 +135,6 @@
   }
 }
 
-/* 📱 Tablets (769px–1023px) */
 @media (max-width: 1024px) {
   .product-slider {
     max-width: 800px;
@@ -157,7 +150,6 @@
   }
 }
 
-/* 📲 Mobile Landscape / Small Tablets (481px–768px) */
 @media (max-width: 768px) {
   .product-slider {
     max-width: 600px;
@@ -170,7 +162,7 @@
   }
   .product-slider .swiper-button-next,
   .product-slider .swiper-button-prev {
-    display: none; /* Hide arrows on mobile */
+    display: none; 
   }
   .product-slider .slider-title {
     font-size: 1.4rem;
@@ -180,7 +172,6 @@
   }
 }
 
-/* 📞 Phones (361px–480px) */
 @media (max-width: 480px) {
   .product-slider {
     max-width: 270px;
@@ -200,7 +191,6 @@
   }
 }
 
-/* 🪶 Small Phones (<=360px) */
 @media (max-width: 360px) {
   .product-slider {
     max-width: 270px;

@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrums from "../../components/Breadcrums/Breadcrums";
-
-
+import "Applications.css"
+ 
 export default function Services() {
   return (
     <div>

@@ -21,7 +21,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic form validation
+
     if (!formData.name || !formData.email || !formData.message) {
       alert("Please fill in all required fields.");
       return;
@@ -30,7 +30,6 @@ export default function Contact() {
     console.log("Enquiry Form Data:", formData);
     setSubmitted(true);
 
-    // Reset form
     setFormData({
       name: "",
       email: "",

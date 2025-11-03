@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Product_slider.css";
 
-import products from "../../data/products"; // adjust path if needed
+import products from "../../data/products"; 
 
 const ProductSlider = () => {
   return (
@@ -14,7 +14,7 @@ const ProductSlider = () => {
       <h2 className="slider-title">Featured Products</h2>
 
       <div className="slider-container">
-        {/* Outside arrows */}
+      
         <button className="swiper-button-prev" aria-label="Previous"></button>
 
         <Swiper

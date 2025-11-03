@@ -38,7 +38,7 @@ import AirFilterRegulator from "../assets/products/Air_Filter_Regulator.jpg";
 import SightGlass1 from "../assets/products/Sight_Glass.jpg";
 import SightGlass2 from "../assets/products/Sight_Glass2.jpg";
 
-// Products Array
+
  export const products = [
   // Floats Category
   {
@@ -208,7 +208,7 @@ import SightGlass2 from "../assets/products/Sight_Glass2.jpg";
     category: "Valves & Fittings"
   },
 
-  // Valves & Fittings Category (continued)
+
   {
     id: 28,
     name: "All Type Of Fasteners",
