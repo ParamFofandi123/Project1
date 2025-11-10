@@ -17,17 +17,17 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Applications Page -->
+  <url>
+    <loc>https://www.winovasolutions.com/applications</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Products Page -->
   <url>
     <loc>https://www.winovasolutions.com/products</loc>
-    <lastmod>2025-11-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Services Page -->
-  <url>
-    <loc>https://www.winovasolutions.com/career</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
