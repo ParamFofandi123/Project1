@@ -76,6 +76,7 @@ export default function Home() {
   }, [transitionEnabled]);
 
   return (
+    
     <div className="home-container">
       
       <div className="slideshow">
